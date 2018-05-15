@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Captured Output - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Captured Output</h1>
+<p>iTerm2 has a feature called "Captured Output" which helps you find and track important lines of output from logs, build processes, and such.</p>
+
+<center><img src="img/screenshots/v3-screen-shots/iterm2-captured-output.gif"></center>
+
+
+<h3>What does it do?</h3>
+
+<p>Captured Output is a tool that may be added to iTerm2's toolbelt (a view on the right side of terminal windows). It works in conjunction with user-defined <a href="https://www.iterm2.com/triggers.html">Triggers</a>. A Trigger whose action is <em>Capture Output</em> looks for lines of output that match its regular expression. When one is found, the entire line is added to the Captured Output tool. When the user clicks on a line in the Captured Output tool, iTerm2 scrolls to reveal that line. Double-clicking on a line in the Captured Output tools run a user-defined <a href="https://www.iterm2.com/coprocesses.html">Coprocess</a>.</p>
+
+<h3>Shell Integration Required</h3>
+
+<p><a href="https://www.iterm2.com/shell_integration.html">Shell Integration</a> must be installed because Captured Output ties in to command history.</p>
+
+<h3>Example</h3>
+
+<p>One way to use Captured Output is to view compiler output. Suppose you run <em>make</em> and get thousands of lines of output, some of which may contain errors or warnings. You'd like to examine each one and take some action on it. Here's how you would use Captured Output to assist with this task:</p>
+
+<h4>Step 1: Create Triggers</h4>
+
+<p><a href="/documentation-triggers.html">Create a Trigger</a> that matches your compiler's errors and warnings. Clang's errors look like this:</p>
+
+<pre>
+filename.c:54:9: error: use of undeclared identifier 'foo'
+</pre>
+
+
+<p>The following regular expression matches errors and warnings from Clang:</p>
+
+<pre>
+^([_a-zA-Z0-9+/.-]+):([0-9]+):[0-9]+: (?:error|warning):
+</pre>
+
+
+<p>There are two capture groups defined. We'll come back to those later.</p>
+
+<h4>Step 2: Open the Toolbelt</h4>
+
+<p>Open the Toolbelt by selecting the menu item Toolbelt &gt; Show Toolbelt. Enable the Toolbelt &gt; Captured Output menu item to ensure it is visible.</p>
+
+<h4>Step 3: Run make</h4>
+
+<p>Kick off the build by running make. It spits out thousands of lines of output.</p>
+
+<h4>Step 4: Examine the Captued Output tool</h4>
+
+<p>Any errors or warnings that appear in the compiler output will appear in the Captured Output tool.</p>
+
+<p><img src="images/CapturedOutput.png">
+Select an entry in the tool. iTerm2 scrolls to display the line and briefly highlights it in blue.</p>
+
+<h4>Step 5: Open the file containing the error</h4>
+
+<p>The Trigger created in step 1 takes an optional parameter. It is a command for iTerm2 to exceute as a <a href="https://www.iterm2.com/coprocesses.html">Coprocess</a> when you double-click an entry in the Captured Output tool. An example command is:</p>
+
+<pre>
+echo vim \1; sleep 0.5; echo \2G
+</pre>
+
+
+<p>This coprocess command assumes you are at the command line, and it enters a command to open the offending file to the line number with an error. This is where the capture groups in the regular expression from step 1 become useful. For example, if the filename was "filename.c" and the error was on line 20, as in this error message:</p>
+
+<pre>
+filename:c:20:9 error: use of undeclared identifier 'foo'
+</pre>
+
+
+<p>The coprocess would:</p>
+
+<ul>
+<li>Type "vim filename.c", followed by enter, as though you were typing it at the keyboard.</li></li>
+<li>Wait half a second.</li></li>
+<li>Type "20G".</li></li>
+</ul>
+
+
+<h4>Step 6: Check it off the list</h4>
+
+<p>You can right-click on an entry in Captured Output to open a menu, which contains a single item: "Toggle Checkmark". This helps you remember which entries have been dealt with as you go through errors and warnings in your compiler output.</p>
+
+<h3>Navigation</h3>
+
+<p>Captured Output is linked to the Command History tool. If no command is selected in the Command History tool, then the most recent captured output is displayed. Otherwise, the captured output from the selected command is displayed. You can remove a selection from the Command History tool by cmd-clicking on it.</p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

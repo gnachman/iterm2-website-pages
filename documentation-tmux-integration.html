@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tmux Integration - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>tmux Integration</h1>
+<p>iTerm2 is integrated with tmux, allowing you to enjoy a native user interface with all the benefits of tmux's persistence.</p>
+
+<h3>Introduction</h3>
+
+<p>Normally, when you use tmux, multiple virtual windows are displayed in a single "physical" window. You can manipulate the environment by issuing commands to tmux. This poses a few problems:</p>
+
+<ul>
+<li>Some keystroke must be dedicated to tmux to enter its command mode (&#94;B, by default, which means moving the cursor to the left in emacs or an interactive shell becomes more difficult).</li>
+<li>You have to ssh to the remote host more than once to get more than one view of your tmux session's window.</li>
+<li>You have to learn tmux commands.</li>
+<li>To adjust split panes, you have to enable mouse reporting, even if you don't want it otherwise.</li>
+<li>Some built-in features of your terminal emulator don't work as well as they would if you weren't using tmux: for instance, you can't access tmux's scrollback history as easily or quickly as you can in a normal terminal window. Also, tmux's find feature isn't as good as iTerm2's.</li>
+</ul>
+
+
+<p>For many users, a terminal multiplexer would be a great way to work, but they don't want to accept the drawbacks.</p>
+
+<p>iTerm2's tmux integration solves these problems.</p>
+
+<p>When you run "tmux -CC", a new tmux session is created. An iTerm2 window opens and it acts like a normal iTerm2 window. The difference is that when iTerm2 quits or the ssh session is lost, tmux keeps running. You can return to the host you were ssh'ed into and run "tmux -CC attach" and the iTerm2 windows will reopen in the same state they were in before. A few use cases come to mind:</p>
+
+<p>For users who do most of their work in ssh:</p>
+
+<ul>
+<li>Restore the environment you had at work when you get home.</li>
+<li>No more anxiety about letting System Update reboot!</li>
+</ul>
+
+
+<p>For everyone:</p>
+
+<ul>
+<li>Collaborate with another user by having two people attach to the same tmux session.</li>
+</ul>
+
+
+<h3>Usage</h3>
+
+<p>You should be able to use tmux as always. Just add the -CC argument to its invocation. In practice, this means running one of these commands:</p>
+
+<ul>
+<li>tmux -CC</li>
+<li>tmux -CC attach</li>
+</ul>
+
+
+<p>When you run tmux -CC, what you'll see on that terminal is a menu:</p>
+
+<pre>
+** tmux mode started **
+
+Command Menu
+----------------------------
+esc    Detach cleanly.
+  X    Force-quit tmux mode.
+  L    Toggle logging.
+  C    Run tmux command.
+</pre>
+
+
+<ul>
+<li>If you press esc, the tmux windows will close and the tmux client will exit.</li>
+<li>If you press esc and nothing happens, then the tmux client may have crashed or something else has gone wrong. Press "X" to force iTerm2 to exit tmux mode. You may need to run "stty sane" to restore your terminal's state if the tmux client did crash.</li>
+<li>If you want to report a bug, press L and reproduce the issue. The tmux protocol commands will be written to the screen.</li>
+<li>If you want to run a tmux command that isn't available through the menus, you can press C. A dialog box opens and you can enter a command. For example, "new-window".</li>
+</ul>
+
+
+<p>In general, you don't need to run commands to perform the most common actions. The following iTerm2 actions affect tmux:</p>
+
+<ul>
+<li>Close a session, tab, or window: Kills the tmux session or window.</li>
+<li>Split a pane: Splits the tmux window using the split-window command.</li>
+<li>Resize a split pane: Resizes tmux split panes using the resize-pane command.</li>
+<li>Resize a window: Tells tmux that the client size has changed, causing all windows to resize. Windows are never larger than the smallest attached client. A gray area on the right or bottom of a window indicates that a physical window is larger than the maximum allowed tmux window size. One consequence of this rule is that all tmux windows/tabs will contain the same number of rows and columns.</li>
+<li>Create a window or tab using the Shell->tmux menu: Creates a new tmux window.</li>
+<li>Detach using Shell->tmux->Detach: Detaches from the tmux session. All tmux windows are closed. You can get them back with tmux -CC attach.</li>
+</ul>
+
+
+<h3>Limitations</h3>
+
+<p>There are a few limitations of tmux integration which are related to the design of tmux.</p>
+
+<ul>
+<li>A tab with a tmux window may not contain non-tmux split panes.</li>
+<li>.tmuxrc files are untested and probably won't work well.</li>
+<li>All tabs and windows belonging to a particular tmux session must be the same size and use the same font.</li>
+<li>A tab with split panes may have "empty" areas. This is because tmux wants every tmux window to be the same size, but our split pane dividers are not exactly one cell by one cell in size.</li>
+</ul>
+
+
+<p>== Building tmux ==</p>
+
+<p>Use the latest version of tmux. The oldest version that works is 1.8, but 2.3 or later is recommended (older versions didn't handle non-ASCII input very well, or suffered from various known bugs and limitations). The easiest way to install tmux on your Mac is with <a href="https://brew.sh/">homebrew</a>:</p>
+
+<p><code>
+brew install tmux
+</code></p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

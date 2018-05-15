@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Proprietary Escape Codes - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Proprietary Escape Codes</h1>
+<p>iTerm2 supports several non-standard escape codes. These may not work properly in tmux or screen, and may have unknown effects on other terminal emulators. Proceed with caution.</p>
+
+<p>A quick comment on notation: in this document, ^[ means "Escape" (hex code 0x1b) and ^G means "bel" (hex code 0x07).</p>
+
+<p>The OSC command <code>50</code> used to be used but it conflicts with xterm, so it is now <code>1337</code>.</p>
+
+<h4>Set cursor shape</h4>
+
+<pre><code>^[]1337;CursorShape=N^G
+</code></pre>
+
+<p>where N=0, 1, or 2.</p>
+
+<ul>
+        <li>0: Block</li>
+        <li>1: Vertical bar</li>
+        <li>2: Underline</li>
+</ul>
+
+
+<p>Add this to your .vimrc to change cursor shape in insert mode:</p>
+
+<pre><code>let &amp;t_SI = "\&lt;Esc&gt;]1337;CursorShape=1\x7"
+let &amp;t_EI = "\&lt;Esc&gt;]1337;CursorShape=0\x7"
+</code></pre>
+
+<p>This is derived from <a href="https://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes">Konsole</a>.</p>
+
+<h4>Set Mark</h4>
+
+<p>The "Set Mark" (cmd-shift-M) command allows you to record a location and then jump back to it later (with cmd-shift-J). The following escape code has the same effect as that command:</p>
+
+<pre><code>^[]1337;SetMark^G
+</code></pre>
+
+<h4>Steal Focus</h4>
+
+<p>To bring iTerm2 to the foreground:</p>
+
+<pre><code>^[]1337;StealFocus^G
+</code></pre>
+
+<h4>Clear Scrollback History</h4>
+
+<p>To erase the scrollback history:</p>
+
+<pre><code>^[]1337;ClearScrollback^G
+</code></pre>
+
+<h4>Set curent directory</h4>
+
+<p>To inform iTerm2 of the current directory to help semantic history:</p>
+
+<pre><code>^[]1337;CurrentDir=/the/current/directory^G
+</code></pre>
+
+<h4>Post a Growl notification</h4>
+
+<p>To post a Growl notification:</p>
+
+<pre><code>^[]9;Message content goes here^G
+</code></pre>
+
+<p>This will have no effect if Growl is not running.</p>
+
+<h4>Change profile</h4>
+
+<p>To change the session's profile on the fly:</p>
+
+<pre><code>^[]1337;SetProfile=NewProfileName^G
+</code></pre>
+
+<h4>Copy to clipboard</h4>
+
+<p>To place text in the pasteboard:</p>
+
+<pre><code>^[]1337;CopyToClipboard=name^G
+</code></pre>
+
+<p>Where name is one of "rule", "find", "font", or empty to mean the general pasteboard (which is what you normally want). After this is sent, all text received is placed in the pasteboard until this code comes in:</p>
+
+<pre><code>^[]1337;EndCopy^G
+</code></pre>
+
+<h4>Set window title and tab chrome background color</h4>
+
+<p>To set the window title and tab color use this escape sequence:</p>
+
+<pre><code>^[]6;1;bg;red;brightness;N^G
+^[]6;1;bg;green;brightness;N^G
+^[]6;1;bg;blue;brightness;N^G
+</code></pre>
+
+<p>Replace N with a decimal value in 0 to 255.</p>
+
+<p>Example in bash that turns the background purple:</p>
+
+<pre><code>echo -e "\033]6;1;bg;red;brightness;255\a"
+echo -e "\033]6;1;bg;green;brightness;0\a"
+echo -e "\033]6;1;bg;blue;brightness;255\a"
+</code></pre>
+
+<p>To reset the window title and tab color, use this code:</p>
+
+<pre><code>^[]6;1;bg;*;default^G
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>echo -e "\033]6;1;bg;*;default\a"
+</code></pre>
+
+<h4>Change the color palette</h4>
+
+<pre><code>^[]Pnrrggbb^[\
+</code></pre>
+
+<p>Replace "n" with:</p>
+
+<ul>
+        <li>0-f (hex) = ansi color</li>
+        <li>g = foreground</li>
+        <li>h = background</li>
+        <li>i = bold color</li>
+        <li>j = selection color</li>
+        <li>k = selected text color</li>
+        <li>l = cursor</li>
+        <li>m = cursor text</li>
+</ul>
+
+
+<p>rr, gg, bb are 2-digit hex value (for example, "ff").
+Example in bash that changes the foreground color blue:</p>
+
+<pre><code>echo -e "\033]Pg4040ff\033\\"
+</code></pre>
+
+<h4>Annotations</h4>
+
+<p>To add an annotation use on of these sequences:</p>
+
+<pre><code>^[]1337;AddAnnotation=message^G
+^[]1337;AddAnnotation=length|message^G
+^[]1337;AddAnnotation=message|length|x-coord|y-coord^G
+^[]1337;AddHiddenAnnotation=message^G
+^[]1337;AddHiddenAnnotation=length|message^G
+^[]1337;AddHiddenAnnotation=message|length|x-coord|y-coord^G
+</code></pre>
+
+<ul>
+<li>message: The message to attach to the annotation.</li>
+<li>length: The number of cells to annotate. Defaults to the rest of the line beginning at the start of the annotation.</li>
+<li>x-coord and y-coord: The starting coordinate for the annotation. Defaults to the cursor's coordinate.</li>
+</ul>
+
+
+<p><em>AddHiddenAnnotation</em> does not reveal the annotation window at the time the escape sequence is received, while <em>AddAnnotation</em> opens it immediately.</p>
+
+<h4>Cursor Guide</h4>
+
+<pre><code>^[]1337;HighlightCursorLine=boolean^G
+</code></pre>
+
+<p>The <em>boolean</em> should be <em>yes</em> or <em>no</em>. This shows or hides the cursor guide.</p>
+
+<h4>Attention</h4>
+
+<pre><code>^[]1337;RequestAttention=boolean^G
+</code></pre>
+
+<p>The boolean should be <em>yes</em> to request attention by bouncing the dock icon and <em>no</em> to cancel a previous request.</p>
+
+<h4>Background Image</h4>
+
+<pre><code>^[]1337;SetBackgroundImageFile=base64^G
+</code></pre>
+
+<p>The value of <em>base64</em> is a base64-encoded filename to display as a background image. If it is an empty string then the background image iwll be removed. User confirmation is required as a security measure.</p>
+
+<h4>Report Cell Size</h4>
+
+<pre><code>^[]1337;ReportCellSize^G
+</code></pre>
+
+<p>The terminal responds with:</p>
+
+<pre><code>^[]1337;ReportCellSize=height;width^G
+</code></pre>
+
+<p>Where <em>height</em> and <em>width</em> are floating point values giving the size in points of a single character cell. For example:</p>
+
+<pre><code>^[]1337;ReportCellSize=17.50;8.00^[\
+</code></pre>
+
+<h4>Badge</h4>
+
+<p>The badge has custom escape sequences described <a href="badges.html">here</a>.</p>
+
+<h4>Downloads</h4>
+
+<p>For information on file downloads and inline images, see <a href="images.html">here</a>.</p>
+
+<h2>Shell Integration/FinalTerm</h2>
+
+<p>iTerm2's <a href="shell_integration.html">Shell Integration</a> feature is made
+possible by proprietary escape sequences pioneered by the FinalTerm emulator.
+FinalTerm is defunct, but the escape sequences are documented here.</p>
+
+<h3>Definitions</h3>
+
+<ul>
+<li><code>OSC</code> stands for <em>Operating System Command</em>. In practice it refers to this
+sequence of two ASCII characters: 27, 93 (<code>esc ]</code>).</li>
+<li><code>ST</code> stands for <em>String Terminator</em>. It terminates an OSC sequence and
+consists either of two ASCII characters 27, 92 (<code>esc \</code>) or ASCII 7 (<code>bel</code>).</li>
+</ul>
+
+
+<p>OSC sequences always begin with <code>OSC</code>, are followed by a sequence of
+characters, and are terminated with <code>ST</code>.</p>
+
+<p>Most <code>OSC</code> codes begin with a number (one or more decimal digits), which we'll
+call the "command" in this document. If the command takes parameters it will be
+followed by a semicolon and the structure of the rest of the body of the <code>OSC</code>
+sequence is dependent on the command. Well-behaved terminal emulators ignore
+<code>OSC</code> codes with unrecognized commands.</p>
+
+<h3>Concepts</h3>
+
+<p>The goal of the FinalTerm escape sequences is to mark up a shell's output with
+semantic information about where the prompt begins, where the user-entered
+command begins, and where the command's output begins and ends.</p>
+
+<p><strong>[PROMPT]</strong>prompt% <strong>[COMMAND_START]</strong> ls -l<br>
+<strong>[COMMAND_EXECUTED]</strong><br>
+-rw-r--r--  1 user group   127 May  1  2016 filename<br>
+<strong>[COMMAND_FINISHED]</strong></p>
+
+<h3>Escape Sequences</h3>
+
+<p>FinalTerm originally defined various escape sequences in its original spec that
+are not supported by iTerm2 and are not described in this document. The best
+remaining references to these codes are in iTerm2's source code.</p>
+
+<h4>FTCS_PROMPT</h4>
+
+<p><code>OSC 1 3 3 ; A ST</code></p>
+
+<p>Sent just before start of shell prompt.</p>
+
+<h4>FTCS_COMMAND_START</h4>
+
+<p><code>OSC 1 3 3 ; B ST</code></p>
+
+<p>Sent just after end of shell prompt, before the user-entered command.</p>
+
+<h4>FTCS_COMMAND_EXECUTED</h4>
+
+<p><code>OSC 1 3 3 ; C ST</code></p>
+
+<p>Sent just before start of command output. All text between <code>FTCS_COMMAND_START</code>
+and <code>FTCS_COMMAND_EXECUTED</code> at the time <code>FTCS_COMMAND_EXECUTED</code> is received
+excluding terminal whitespace is considered the command the user entered. It is
+expected that user-entered commands will be edited interactively, so the screen
+contents are captured without regard to how they came to contain their state.
+If the cursor's location is before (above, or if on the same line, left of) its
+location when <code>FTCS_COMMAND_START</code> was received, then the command will be
+treated as the empty string.</p>
+
+<h4>FTCS_COMMAND_FINISHED</h4>
+
+<p><code>OSC 1 3 3 ; D ; Ps ST</code></p>
+
+<p><code>OSC 1 3 3 ; D ST</code> (for cancellation only)</p>
+
+<p>The interpretation of this command depends on which <code>FTCS</code> was most recently
+received prior to <code>FTCS_COMMAND_FINISHED</code>.</p>
+
+<p>This command may be sent after <code>FTCS_COMMAND_START</code> to indicate that a command
+was aborted. All state associated with the preceding prompt and the command
+until its receipt will be deleted. Either form is accepted for an abort. If the
+Ps argument is provided to an abort it will be ignored.</p>
+
+<p>If this command is sent after <code>FTCS_COMMAND_EXECUTED</code>, then it indicates the
+end of command prompt. Ps is the command's exit status, a number in the range
+0-255 represented as one or more ASCII decimal digits. A status of 0 is
+considered "success" and nonzero indicates "failure." The terminal may choose
+to indicate this visually.</p>
+
+<p>If neither <code>FTCS_COMMAND_START</code> nor <code>FTCS_COMMAND_EXECUTED</code> was sent prior to
+<code>FTCS_COMMAND_FINISHED</code> it should be ignored.</p>
+
+<h3>iTerm2 Extensions</h3>
+
+<p>iTerm2 extends FinalTerm's suite of escape sequences.</p>
+
+<h4>SetUserVar</h4>
+
+<p><code>OSC 1 3 3 7 ; S e t U s e r V a r = Ps1 = Ps2 ST</code></p>
+
+<p>Sets the value of a user-defined variable. iTerm2 keeps a dictionary of
+key-value pairs which may be used within iTerm2 as string substitutions, such
+as in the <a href="/badges.html">Badge</a>.</p>
+
+<p>Ps1 is the key.</p>
+
+<p>Ps2 is the base64-encoded value.</p>
+
+<h4>ShellIntegrationVersion</h4>
+
+<p><code>OSC 1 3 3 7 ; S h e l l I n t e g r a t i o n V e r s i o n = Pn ; Ps ST</code></p>
+
+<p><code>OSC 1 3 3 7 ; S h e l l I n t e g r a t i o n V e r s i o n = Pn ST</code> (deprecated)</p>
+
+<p>Reports the current version of the shell integration script.</p>
+
+<p>Pn is the version.</p>
+
+<p>Ps is the name of the shell (e.g., <code>bash</code>).</p>
+
+<p>iTerm2 has a baked-in notion of the "current" version and if it sees a lower
+number the user will be prompted to upgrade. The version number is specific to
+the shell.</p>
+
+<h4>RemoteHost</h4>
+
+<p><code>OSC 1 3 3 7 ; R e m o t e H o s t = Ps1 @ Ps2 ST</code></p>
+
+<p>Reports the user name and hostname.</p>
+
+<p>Ps1 is username.
+Ps2 is fully-qualified hostname.</p>
+
+<h4>CurrentDir</h4>
+
+<p><code>OSC 1 3 3 7 ; C u r r e n t D i r = Ps1 ST</code></p>
+
+<p>Reports the current directory.</p>
+
+<p>Ps1 is the current directory.</p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

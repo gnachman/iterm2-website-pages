@@ -1,0 +1,12 @@
+- Fix a crash when toggling the "hotkey window hides when focus is lost" box.
+- Fix a crash when switching away from the prefs window after closing the color
+  picker.
+- Fix a crash when you close prefs window while editing an untokenized value in
+  the tags field.
+- Support ipv6 DNS lookups for determining if a hostname is legit for semantic
+  history. Don't cache temporary DNS failures.
+- Fix a bug where the cursor position is not correctly restored in the main
+  screen when attaching to a tmux integration session in the alternate screen.
+
+SHA-256 of the zip file is
+d4fae6dd9e7f3173791bd7b56bc4fd3520fb197a374776833735e0f95fd6fa20

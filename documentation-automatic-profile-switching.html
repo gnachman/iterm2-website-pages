@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Automatic Profile Switching - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Automatic Profile Switching</h1>
+<p>iTerm2 can use information it knows about your current path, host name, and user name to change profiles. For example, your window's background color or the terminal's character encoding could change when connecting to different hosts.</p>
+
+<h3>Shell Integration Required</h3>
+
+<p>You must install <a href="documentation-shell-integration.html">Shell Integration</a> on all machines and all user accounts where you plan to use Automatic Profile Switching (either by using the scripts or the Triggers workaround described in the Shell Integration docs).</p>
+
+<h4>Rule Syntax</h4>
+
+<p>In <em>Preferences&gt;Profiles&gt;Advanced</em>, you may specify a set of rules.</p>
+
+<p><img src="/images/AutomaticProfileSwitching.png"></p>
+
+<p>When any session satisfies a rule in a given profile, it will switch to that profile. Rules consist of three optional components: the user name, the hostname, and the path. At least one component must be present, since an empty rule is not allowed. The hostname is required only when both a user name and a path are specified.</p>
+
+<p>A user name is a unix accont name (e.g., <em>root</em>) followed by an <code>@</code>.</p>
+
+<p>A path always begins with a <code>/</code>. Any time a hostname is followed by a path, they are separated by a <code>:</code>. For example, <code>iterm2.com:/users/george</code>. It may include <code>*</code> wildcards.</p>
+
+<p>A hostname can be a DNS name, like <code>iterm2.com</code> or an IP address like <code>127.0.0.1</code>. A hostname may contain one or more <code>*</code> characters, which act as a wildcard (like globbing in Unix).</p>
+
+<p>Some examples:</p>
+
+<ul>
+<li>george@iterm2.com:/users/george</li>
+<li>george@*:/users/george</li>
+<li>*:/users/george</li>
+<li>*.iterm2.com:/users/george</li>
+<li>dev.*.com:/users/george</li>
+<li>george@iterm2.com</li>
+<li>iterm2.com</li>
+<li>george@</li>
+<li>iterm2.com:/users/george</li>
+<li>/users/george</li>
+<li>/users/*</li>
+</ul>
+
+
+<p>Because more than one rule may match at any given time, more complex rules will take priority over less complex rules. The priority order is defined like this:</p>
+
+<ul>
+<li>A username, hostname, and path. For example, "george@iterm2.com:/Users/george".</li>
+<li>A username and path, using "*" for the hostname. For example, "george@*:/Users/george".</li>
+<li>A combination of username and hostname. For example, "george@iterm2.com".</li>
+<li>A hostname and path. For example, "iterm2.com:/Users/george".</li>
+<li>A hostname. For example, "iterm2.com".</li>
+<li>A username alone. For example, "george@".</li>
+<li>A path alone. For example, "/Users/george".</li>
+</ul>
+
+
+<p>The UI tries to prevent you from entering the same rule in two different profiles, but if that does happen then one profile is chosen arbitrarily.</p>
+
+<h3>Automatic Reversion</h3>
+
+<p>After APS switches a session's profile, its rules may eventually cease to match (for example, the hostname changes back to "localhost" because an ssh session ends). If no profile has a matching rule, the session's original profile will be restored.</p>
+
+<h4>Implementation</h4>
+
+<p>Each session maintains a stack of profiles. Initially, the stack contains the profile the session was created with. When the username, hostname, or path changes, iTerm2 finds the best-matching profile. If some profile has a matching rule, one of two things happens:</p>
+
+<ul>
+<li>If that profile is already on the stack, profiles above that one will be removed from the stack and the session will switch to that profile.</li>
+<li>Failing that, the profile will be pushed on the stack and the session will switch to that profile.</li>
+</ul>
+
+
+<p>If no profile has a matching rule, the stack is emptied (except for the first entry, the original profile for the session) and the session reverts to its original profile.</p>
+
+<p>Rules may begin with ! to indicate "stickiness". A sticky rule causes its profile to stay even after the rule no longer applies, so long as no other rule matches.</p>
+
+<h3>Triggers</h3>
+
+<p>Since it's impractical to install shell integration everywhere (for example, as <em>root</em>), there will be times when you need to write a trigger to detect the current username or hostname. Please see the <em>Triggers</em> section of <a href="/shell_integration.html">Shell Integration</a> for details.</p>
+
+<h3>Troubleshooting</h3>
+
+<p>There are a few ways things can go wrong. Please see the <a href="https://gitlab.com/gnachman/iterm2/wikis/scp-not-connecting">Why doesn't secure copy/automatic profile switching work?</a> document for help diagnosing and fixing these issues.</p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

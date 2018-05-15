@@ -1,0 +1,2454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Downloads - iTerm2 - Mac OS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li ><a href="/documentation.html">Documentation</a></li>
+            <li class="active"><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <h3>Stable Releases</h3>
+
+
+<hr style="margin-top: 0pt; margin-bottom: 4pt" />
+
+
+<p>
+Stable releases update rarely but have no serious bugs.
+</p>
+
+
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_6.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.6 (OS 10.10+)
+</a></h4>
+
+
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('2553953005860564323')" id='show2553953005860564323'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('2553953005860564323')" id='hide2553953005860564323' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist2553953005860564323" style="display: none">iTerm2 3.1.6
+
+New features:
+- Add item to help menu to show third party licenses.
+- Add buried sessions to status bar icon menu.
+- Add option to suppress restart session confirmation.
+- Add support for OSC 10 and OSC 11 (querying colors).
+- Add an advanced pref that prevents wraparound when
+  changing the active split pane directionally.
+- Add an advanced pref to allow tabs to wrap around.
+- Add a new advacned pref to disable middle-click closes a
+  tab.
+- Add F21-F24 to touch bar.
+- Add GPU-based Metal renderer. It's off by default and
+  still in development, but you can try it out if you like.
+  More details here:
+  https://gitlab.com/gnachman/iterm2/wikis/Metal-Renderer
+
+Bug fixes:
+- Fix crash when deleting a password manager entry.
+- Fix crash when saving an arrangement.
+- Fix crash when searching a regex of $.
+- Update Solarized color schemes to use SRGB and match the
+  spec.
+- Improve appearance of tab color menu item with dark
+  scheme.
+- Fix advanced preference for suppressing tab-to-spaces
+  conversion.
+- Fix bug in Zoom where the last line was not included.
+- Improve support for tab color in tmux integration. New
+  tmux tabs use the tmux profile's tab color.
+- Update touch bar when color presets change.
+- Fix a bug where hotkey windows on an external display
+  would not receive focus.
+- Terminate jobs more aggressively when you quit iTerm2
+  so you don't get "broken pipe" sessions next time you
+  launch the app.
+- Fix a bug where tab titles were truncated when tabs are on
+  the left.
+- Disable paste bracketing for uploads.
+- Don't save uploads to paste history.
+- Fix bug where floating hotkey windows could have the wrong
+  geometry when app is excluded from dock.
+- Enable binding actions to function keys on touch bar.
+- Don't unmaximize a tab when switching to its active
+  session from Open Quickly.
+- Fix a crash on exit in the server process.
+- Remove dynamic tag when duplicating a profile.
+- Fix a bug where tags in the profile list were not visible.
+- Fix a bug where text after inline images was misaligned.
+- Fix a bug where scp error messages showed the wrong port
+  number.
+- Fix a bug where non-hotkey windows appeared when you press
+  the hotkey to hide it and activate another app.
+- Fix a crash when a trigger is missing message text.
+- Prevent a crash when performing smart selection while
+  scrolling.
+- Unburying a session or undoing close of a session restores
+  the correct window type now.
+
+Other improvements:
+- Use Unicode 9 widths by default.
+- When you create a new tmux window in tmux integration mode
+  and it is configured to "Open tmux windows as tabs in
+  existing window" they now open in their own window. The
+  mode setting now affects only the initial windows when you
+  attach.
+- Touch bar icon for Add Mark made smaller.
+- Add Edit Session to the tab context menu.
+- Reset exits alternate screen mode.
+- Improve appearance of find bar in dark theme.
+- If you use focus follows mouse and activate another app
+  and then come back to iTerm2 and the mouse hasn't moved,
+  don't change the key window.
+- Support inline images wider than 256 columns.
+- Only show key icon at password prompt if the terminal has
+  keyboard focus.
+- Disable Smart Cursor Color checkbox if cursor shape is not
+  box.
+- Improve performance when there are many profiles.
+- Fix support for CSI 38:2, whicih ought to take a color
+  type and color space.
+- Rate limit changes to window title for performance.
+- Improve performance when window titles are extremely long.
+- When opening a new window, wait for the app to become
+  active before making the new window key.
+- Don't offer to turn off mouse reporting, paste bracketing,
+  or focus reporting when we transition from no hostname to
+  having a hostname
+- Sort files in Scripts menu.
+- Show tab title and session name in tab tooltip.
+- Show only geometry in window title during live resize when
+  the window is very narrow.
+- Improve performance when you have an enormous number of
+  empty lines in history.
+- Warn when minimum contrast is over 97%.
+- Disable hotkey in new profile when duplicating.
+- Make three-finger tap recognizer more conservative.
+
+SHA-256 of the zip file is
+4acf012b48f99edb49bb4eb9e45a939fc88f69e7c43a2a36ea33556bc46b0087
+</pre></p>
+</p>
+
+
+<p><a href="javascript:showId('older_0')" id='showolder_0'>&#x25b8; Show Older Versions</a>
+  <a href="javascript:hideId('older_0')" id='hideolder_0' style="display: none">&#x25be; Hide Older Versions</a>
+  <div id="changelistolder_0" style="margin-left: 15pt; display: none"><h3>Older Stable Releases</h3>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_5.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.5 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('3449813199424332554')" id='show3449813199424332554'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('3449813199424332554')" id='hide3449813199424332554' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist3449813199424332554" style="display: none">New features:
+- When excluded from dock and app switcher, add Check for
+  Updates to status icon in menu bar.
+- Adds an advanced preference to change how line height is
+  calculated, which improves results for Input Mono
+  Condensed and acts more like Terminal.app.
+- When at a password prompt and the key icon is showing,
+  you can now click the key icon to open the password
+  manager.
+- Add support for the REP escape sequence, but it's off by
+  default.
+
+Bug fixes:
+- Fix a very frequent crash for users of the Jobs tool.
+- Fixes some crashes, including a very frequent crash caused
+  by a bad interaction between Sparkle and user defaults.
+- Prevent high sierra tabs the "right" way, by overriding a
+  method in NSWindow, rather than just setting a user
+  default.
+- Fix a bug where double-tap shift to open a hotkey window
+  didn't work.
+- Prevent a crash when the window size is incorrectly
+  reported as 0x0.
+- Allow key bindings with the action "Select Menu Item",
+  "New Window", "New Tab" and "Undo" to work when there is
+  no terminal window.
+- If the password manager is opened by a trigger but you
+  have to authenticate to open the password manager,
+  autoselect the proper account after auth.
+- Require a minimum delay between taps of a modifier key to
+  open a hotkey window.
+- Don't store more than 1000 recently used directories.
+- Prevent descenders from lines above the screen from
+  hanging down into the screen area.
+- Add opt-forward delete as a shortcut for delete word
+  forward in the Natrual Text Editing preset.
+- Accept ~ in HTTP URLs for smart selection for new
+  installs.
+- If you press Fn+Ctrl+Key send Ctrl+Key, not Key. A strange
+  behavior dating back to the old iTerm.
+- The tab control character no longer changes the background
+  color of cells it skips over.
+- Don't send two newlines when you launch iTerm2 with a
+  shell script (e.g., by double clicking one in Finder)
+- Show Services in the context menu when more than one line
+  of text is selected (up to 10k lines).
+
+SHA-256 of the zip file is
+7159ce6c96fe5c61653a6d6a9a45facfe4a9abff5bfa063e361efd70f89fd769
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_4.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.4 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('4993132668936322165')" id='show4993132668936322165'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4993132668936322165')" id='hide4993132668936322165' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4993132668936322165" style="display: none">Bug fixes:
+- Fix navigating to split pane above/below/left right not
+  wrapping around.
+- Prevent blur values over 24 to prevent hitting a bug in
+  high sierra (values over 26 make the blur funny colors and
+  values over 24 are too slow).
+- Fix line wrapping of multi-line badges.
+- Allow windows to be larger than a screen when displays
+  have separate spaces is turned off.
+- Reduce the impact of proc_pidinfo and statfs hanging.
+- Tweak position of paste button in advanced paste.
+- Fix bug in high sierra where eydropper in color picker
+  didn't go away after selecting a color.
+- Remember the size of a hotkey window after resizing it and
+  then adding a new tab.
+- Fix a bug where opening an autocomplete window could cause
+  a hotkey window to hide.
+- If you scroll up to the top of a window and then clear the
+  buffer and then new output arrives, it now begins
+  autoscrolling when the cursor reaches the bottom.
+- Fix some crashes, including a very frequent one because of
+  a bad interaction between Sparkle and user defaults.
+- Disable tabs in High Sierra when you've got them set to
+  Always in preferences.
+
+New features:
+- Add an advanced preference to use the typeface's box
+  drawing glyphs instead of the custom box drawing code.
+
+SHA-256 of the zip file is
+202b2803b514eedd942dac94640cfaee45668e3e6939f88eb29730890dc6d66c
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_3.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.3 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('1010641536412574960')" id='show1010641536412574960'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('1010641536412574960')" id='hide1010641536412574960' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist1010641536412574960" style="display: none">Bug fixes:
+- Fix a bug that broke subpixel antialiasing for non-retina
+  users.
+- Do not require biometric authentication for the password
+  manager: allow password input.
+- Draw arcs and diagonal lines in favor of the glyphs in the
+  typeface so everything lines up nice and pretty.
+- Fix a bug where closing a tab in applescript would always
+  close the current tab, not the one you wanted.
+- Restore native fullscreen windows on the proper screen.
+- Show fullscreen windows under the menubar when in
+  UIElement mode.
+- Treat halfwidth katakana sound marks as non-combining
+  marks to emulate Terminal's funny behavior.
+- Fix a bug where keyboard input would break after holding
+  down a key to make it repeat, for some users.
+- Fix a bug where tags weren't visible in toolbelt profiles
+  on 10.13.
+- Don't open a short-lived window when showing a manpage
+  from the touch bar.
+- Make the outline of the selected tab when colored tabs are
+  present more subtle.
+- Handle reuse current directory in tmux 1.8 by ignoring it
+  instead of opening new tabs in the root directory
+- Ignore new notifications from tmux 2.5
+- Fix white-on-white buttons in the butterbar.
+- Fix a bug where the password manager wouldn't open in
+  macOS 10.11.
+- Fix a bug where stray underlines would appear.
+
+New features:
+- Add an advanced preference to disable the status bar icon.
+- Add an advanced preference to increase the sensitivity of
+  the scroll wheel.
+
+SHA-256 of the zip file is
+4f35d70f4420fa736ed158663ecf114baeb61836b5a8b30652595ab4fcf68544
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_2.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.2 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('7432320332236080607')" id='show7432320332236080607'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('7432320332236080607')" id='hide7432320332236080607' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist7432320332236080607" style="display: none">Security updates:
+- All the code to perform DNS requests on hover has been removed. It
+  is no longer an option. It had been turned off by default in 3.1.1.
+  Please see this URL for more information:
+  https://gitlab.com/gnachman/iterm2/wikis/dnslookupissue
+
+New features:
+- Add a "Copy Password" item to the password manager's right-click
+  menu
+
+Bug fixes:
+- Prevents High Sierra's native tabs from affecting iTerm2 windows.
+- Restore hotkey windows to the proper screen.
+- Fix a bug where tabs would tag without the user intending to drag
+  them.
+- Recognize non-ASCII URLs as cmd-clickable. All characters encodable
+  by IDN are now considered part of a URL.
+- Fix a bug where you couldn't togle the left side of the "blinking
+  cursor" button.
+- Fix a bug where hotkey windows that had double-taps but no hotkeys
+  could be toggled by pressing "a"
+
+Other changes:
+- Performance improvements when there is a lot of scrollback history
+- Move a bunch of advanced prefs out of the Experimental category
+  since they're now on by default.
+
+
+SHA-256 of the zip file is
+720eccece544ae8765f91c4c0348bb2819e47a2b794ce0adabc14934c00fee38
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.1 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('6321930274562287538')" id='show6321930274562287538'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('6321930274562287538')" id='hide6321930274562287538' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist6321930274562287538" style="display: none">iTerm2 version 3.1 offers a number of new features and bug fixes.
+Please see below for all the details.
+
+Version 3.1.1 is almost the same as 3.1.0, but includes a
+security patch to disable undesirable DNS requests that
+could leak user data. See the details here:
+https://gitlab.com/gnachman/iterm2/wikis/dnslookupissue
+
+New features:
+-------------
+
+Marquee Features
+- Add touch bar support.
+  * Use the touch bar to select tabs in full screen
+  * Assign labels to function keys with a shell script
+  * Create custom touch bar items in Prefs > Keys
+- Add support for ligature fonts.
+- Rework how hotkey windows work:
+  * You can have multiple hotkey windows. Each profile may
+    have a hotkey window associated with it.
+  * Multiple hotkeys can be bound to a single profile.
+  * Double-tap of a modifier key can open a hotkey window.
+  * Hotkey windows can be made to float over other apps'
+    fullscreen windows.
+- Shell integration utilities have a lot of new programs.
+  Reinstall shell integration to get the run-down.
+- Add the ability to "bury" sessions. They get hidden in
+  Session > Buried Sessions. Changes Prefs > General >
+  Automatically hide the tmux client session to
+  automatically bury instead.
+- Add support for OSC 8 to do hypertext links. The syntax
+  is:
+    OSC 8 ; params ; url ST
+  params is zero or more colon-delimited key=value strings.
+  The only defined key is "id". Two adjacent hyperlinks with
+  the same URL but different "id"s will not highlight
+  together on hover. id is optional.
+  As usual, OSC is 'esc ]' and st is 'esc \'.
+- Add copy mode, like tmux's.
+  https://iterm2.com/documentation-copymode.html
+
+Applescript
+- Adds new applescript support for hotkey windows.
+
+Arrangements
+- Add the ability to save a single tab as an arrangement.
+- Add the ability to restore an arrangement as one or more
+  tabs.
+- Hotkey windows are now saved in saved arrangements.
+
+Find on Page
+- Add smart case sensitivity to find on page as the default
+  option.
+
+General
+- Allow windows to snap to the full size of the display.
+- Add a menu item to the Toolbelt menu to save the current
+  toolbelt's width as the default.
+- Extend tip of the day to allow selection between daily or
+  weekly tips.
+- Make the "screen with cursor" window setting update the
+  window's screen each time a hotkey window is opened.
+- Non-edge-spanning X-of-screen windows are now centered.
+- Add setting to disable mouse wheel in mouse reporting
+  mode.
+- Add keybindings for swap pane with left/right/above/below.
+- Add keybindings for find next/previous.
+- Improve performance of deleting profiles when you have
+  lots of them.
+- Add support for finder services. You can right click in
+  Finder to launch iTerm2 in that location.
+- Offer to abort a download when you press ^C while it's
+  downloading.
+- Flash the tab bar on entering fullscreen.
+- Show an announcement when a session restored from an
+  arrangement can't find the profile associated with it.
+- Improve performance of creating a tab if you've increased
+  the maximum number of file descriptors.
+- Redraw windows during resize.
+- Add an optional "proxy" icon to the titlebar. Configurable
+  in Prefs > Appearance.
+- Merge captured output when successive captures are closely
+  related.
+- Add an advanced setting to disable send text at start when
+  launching iTerm2 with a script
+- Add an off-by-default websocket server that enables
+  advanced scripting features.
+- Change "Open in current space" for hotkey windows to move
+  the hotkey window to the current space if it's already
+  open on another space when the hotkey is pressed.
+- Add an advanced preference to make auto logs filenames'
+  formattable.
+
+Shell Integration
+- Offer to turn off focus reporting when host changes.
+- Offer to turn off paste bracketing on host change.
+- Keep track of how many lines are in the prompt so the
+  whole thing can be preserved when you clear the buffer.
+
+Terminal Emulation
+- Add support for Unicode 9 (off by default)
+- Set COLORTERM=truecolor to advertise 24-bit capability.
+- Make the unicode normalization form configurable to None,
+  NFC, NFD, or HFS+. Change the defualt to None.
+
+tmux Integration
+- Tmux integration now supports the "initial directory"
+  setting of the tmux profile.
+- Clear tmux history when you do Clear Buffer or Clear
+  Scrollback Buffer.
+- Add an advanced preference to allow different tmux
+  sessions to have different profiles and to base the
+  profile of the tmux sessions on the session that attached
+  to tmux.
+
+Semantic History
+- Allow hyphens in schemes when looking for clickable URLs
+  so semantic history will accept chrome-devtools: schemes.
+- Semantic history can now open file:line:column in VSCode.
+- Use secure copy to download files selected with cmd-click
+  on a filename on a remote host and OSC 8 URLs with a file:
+  scheme and a host part.
+
+Tab Bar
+- Improve accessibility of the tab bar--tabs are now
+  selectable with accessibility.
+- Make the tab bar's minimum drag distance configurable.
+
+Terminal emulation changes:
+- Add a new proprietary escape sequence to copy embedded
+  base64 data to pasteboard.
+- Add a new proprietary escape sequence to report the value
+  of system- and user-defined variables (as used in badges).
+- Add a new proprietary escape sequence to show fireworks at
+  the cursor.
+- Add a new proprietary escape sequence to prompt the user
+  to select one or more files and then upload them as a
+  base64-encoded tar.gz file.
+- Add a new proprietary escape sequence to customize touch
+  bar function key labels.
+- Add a new proprietary escape sequence to set individual
+  colors or load a preset.
+- Add a new proprietary escape sequence to set unicode
+  version.
+- Accept OSC 7 as a synonym for 1337;RemoteHost and
+  1337;CurrentDir.
+- Add support for CSI 12 h and CSI 12 l to set local echo on
+  or off.
+- Move cursor to the origin on DECSET 1049.
+
+Triggers
+- Add a trigger to set the session title.
+- Add a Prompt Detected trigger action to improve shell
+  integration emulation with triggers.
+- Trigger highlighting colors in a dynamic profile may use
+  #rrggbb notation.
+
+Visuals
+- Underlines can now have a custom color.
+- Add advanced prefs to change the margins.
+- Descenders interrupt underlines.
+- Improve the appearance of dimmed sessions
+- Improve tab bar colors to look more native.
+- Add a preference to disable the line between the title bar
+  and the tab bar.
+- Respect the current keyboard layout when showing a
+  shortcut (e.g., the keypress for a hotkey window).
+- Windows with light backgrounds now get dark borders, if
+  window borders are enabled.
+- Add an advanced pref to tweak the height of the underline
+  cursor.
+- Add an experimental feature to draw an outline around
+  underline and vertical bar cursors to improve distinction
+  from text.
+
+
+Bug fixes:
+----------
+- Fix a bug where surrogate pairs would get corrupted when
+  pasting.
+- Use SRGB colors internally. Fixes a bug where hex values
+  in the color picker weren't stable.
+- Rate limit window size change notifications.
+- Improve performance when there is a network mount.
+- Disconnect dead ssh sessions during tmux integration.
+- Improve how focus follows mouse behaves when you split a
+  pane.
+- Improve how network automounts are detected. This helps us
+  avoid stat()ing files on the network, which can cause
+  hangs when semantic history tries to discover if a file exsts.
+- Keep process monitoring from eating too much CPU.
+- Validate secure copy hostname and user name to ensure
+  legal characters only are present.
+- Fix a crash when the font is broken and reports a 0 size.
+- Allow the password manager to open even if another sheet
+  is already open.
+- Draw the default background color behind inline images.
+- Fix a bug where the "Edit password" button in the password
+  manager would change your password into dots.
+- Fix a bug where the wrong job name would be shown in the
+  titlebar when there were two jobs that considered
+  themselves foreground jobs.
+- Fix a bug where the order of windows in applescript was
+  random, not back to front.
+
+SHA-256 of the zip file is
+45d07fd4d15bdee021a9174ecc44a9641ab2fc12b202ec4f995b03ea3fa6d881
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_1_0.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.0 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('3681851930530608735')" id='show3681851930530608735'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('3681851930530608735')" id='hide3681851930530608735' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist3681851930530608735" style="display: none">iTerm2 version 3.1 offers a number of new features and bug fixes.
+Please see below for all the details.
+
+New features:
+-------------
+
+Marquee Features
+- Add touch bar support.
+  * Use the touch bar to select tabs in full screen
+  * Assign labels to function keys with a shell script
+  * Create custom touch bar items in Prefs > Keys
+- Add support for ligature fonts.
+- Rework how hotkey windows work:
+  * You can have multiple hotkey windows. Each profile may have a
+    hotkey window associated with it.
+  * Multiple hotkeys can be bound to a single profile.
+  * Double-tap of a modifier key can open a hotkey window.
+  * Hotkey windows can be made to float over other apps' fullscreen windows.
+- Shell integration utilities have a lot of new programs.
+  Reinstall shell integration to get the run-down.
+- Add the ability to "bury" sessions. They get hidden in Session > Buried
+  Sessions. Changes Prefs > General > Automatically hide the tmux client
+  session to automatically bury instead.
+- Add support for OSC 8 to do hypertext links. The syntax is:
+  OSC 8 ; params ; url ST
+    params is zero or more colon-delimited key=value strings. The only
+  defined key is "id". Two adjacent hyperlinks with the same URL but
+  different "id"s will not highlight together on hover. id is
+  optional.
+    As usual, OSC is 'esc ]' and st is 'esc \'.
+- Add copy mode, like tmux's.
+  https://iterm2.com/documentation-copymode.html
+
+Applescript
+- Adds new applescript support for hotkey windows.
+
+Arrangements
+- Add the ability to save a single tab as an arrangement.
+- Add the ability to restore an arrangement as one or more tabs.
+- Hotkey windows are now saved in saved arrangements.
+
+Find on Page
+- Add smart case sensitivity to find on page as the default option.
+
+General
+- Allow windows to snap to the full size of the display.
+- Add a menu item to the Toolbelt menu to save the current toolbelt's
+  width as the default.
+- Extend tip of the day to allow selection between daily or weekly tips.
+- Make the "screen with cursor" window setting update the window's
+  screen each time a hotkey window is opened.
+- Non-edge-spanning X-of-screen windows are now centered.
+- Add setting to disable mouse wheel in mouse reporting mode.
+- Add keybindings for swap pane with left/right/above/below.
+- Add keybindings for find next/previous.
+- Improve performance of deleting profiles when you have lots of them.
+- Add support for finder services. You can right click in Finder to
+  launch iTerm2 in that location.
+- Offer to abort a download when you press ^C while it's downloading.
+- Flash the tab bar on entering fullscreen.
+- Show an announcement when a session restored from an arrangement
+  can't find the profile associated with it.
+- Improve performance of creating a tab if you've increased the
+  maximum number of file descriptors.
+- Redraw windows during resize.
+- Add an optional "proxy" icon to the titlebar. Configurable in
+  Prefs > Appearance.
+- Merge captured output when successive captures are closely related.
+- Add an advanced setting to disable send text at start when launching
+  iTerm2 with a script
+- Add an off-by-default websocket server that enables advanced
+  scripting features.
+- Change "Open in current space" for hotkey windows to move the hotkey
+  window to the current space if it's already open on another space
+  when the hotkey is pressed.
+- Add an advanced preference to make auto logs filenames' formattable.
+
+Shell Integration
+- Offer to turn off focus reporting when host changes.
+- Offer to turn off paste bracketing on host change.
+- Keep track of how many lines are in the prompt so the whole thing
+  can be preserved when you clear the buffer.
+
+Terminal Emulation
+- Add support for Unicode 9 (off by default)
+- Set COLORTERM=truecolor to advertise 24-bit capability.
+- Make the unicode normalization form configurable to None, NFC, NFD,
+  or HFS+. Change the defualt to None.
+
+tmux Integration
+- Tmux integration now supports the "initial directory" setting of the
+  tmux profile.
+- Clear tmux history when you do Clear Buffer or Clear Scrollback
+  Buffer.
+- Add an advanced preference to allow different tmux sessions to have
+  different profiles and to base the profile of the tmux sessions on the
+  session that attached to tmux.
+
+Semantic History
+- Allow hyphens in schemes when looking for clickable URLs so semantic
+  history will accept chrome-devtools: schemes.
+- Semantic history can now open file:line:column in VSCode.
+- Use secure copy to download files selected with cmd-click on a
+  filename on a remote host and OSC 8 URLs with a file: scheme and a
+  host part.
+
+Tab Bar
+- Improve accessibility of the tab bar--tabs are now selectable with
+  accessibility.
+- Make the tab bar's minimum drag distance configurable.
+
+Terminal emulation changes:
+- Add a new proprietary escape sequence to copy embedded base64 data
+  to pasteboard.
+- Add a new proprietary escape sequence to report the value of system-
+  and user-defined variables (as used in badges).
+- Add a new proprietary escape sequence to show fireworks at the
+  cursor.
+- Add a new proprietary escape sequence to prompt the user to select
+  one or more files and then upload them as a base64-encoded tar.gz
+  file.
+- Add a new proprietary escape sequence to customize touch bar
+  function key labels.
+- Add a new proprietary escape sequence to set individual colors or
+  load a preset.
+- Add a new proprietary escape sequence to set unicode version.
+- Accept OSC 7 as a synonym for 1337;RemoteHost and 1337;CurrentDir.
+- Add support for CSI 12 h and CSI 12 l to set local echo on or off.
+- Move cursor to the origin on DECSET 1049.
+
+Triggers
+- Add a trigger to set the session title.
+- Add a Prompt Detected trigger action to improve shell integration
+  emulation with triggers.
+- Trigger highlighting colors in a dynamic profile may use #rrggbb
+  notation.
+
+Visuals
+- Underlines can now have a custom color.
+- Add advanced prefs to change the margins.
+- Descenders interrupt underlines.
+- Improve the appearance of dimmed sessions
+- Improve tab bar colors to look more native.
+- Add a preference to disable the line between the title bar and the tab bar.
+- Respect the current keyboard layout when showing a shortcut (e.g.,
+  the keypress for a hotkey window).
+- Windows with light backgrounds now get dark borders, if window borders are enabled.
+- Add an advanced pref to tweak the height of the underline cursor.
+- Add an experimental feature to draw an outline around underline and
+  vertical bar cursors to improve distinction from text.
+
+
+Bug fixes:
+----------
+- Fix a bug where surrogate pairs would get corrupted when pasting.
+- Use SRGB colors internally. Fixes a bug where hex values in the
+  color picker weren't stable.
+- Rate limit window size change notifications.
+- Improve performance when there is a network mount.
+- Disconnect dead ssh sessions during tmux integration.
+- Improve how focus follows mouse behaves when you split a pane.
+- Improve how network automounts are detected. This helps us avoid
+  stat()ing files on the network, which can cause hangs when semantic
+  history tries to discover if a file exsts.
+- Keep process monitoring from eating too much CPU.
+- Validate secure copy hostname and user name to ensure legal characters
+  only are present.
+- Fix a crash when the font is broken and reports a 0 size.
+- Allow the password manager to open even if another sheet is already
+  open.
+- Draw the default background color behind inline images.
+- Fix a bug where the "Edit password" button in the password manager
+  would change your password into dots.
+- Fix a bug where the wrong job name would be shown in the titlebar when
+  there were two jobs that considered themselves foreground jobs.
+- Fix a bug where the order of windows in applescript was random, not
+  back to front.
+SHA-256 of the zip file is
+2837aced993add874a5972fa36a58ead2fa1e348da63480192ea6d52f7bed5eb
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_15.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.15 (OS 10.8+)
+</a></h4>
+<p>
+This is the current stable version. It contains some important bug fixes.
+
+<br>
+<p><a href="javascript:showId('3353474565883211851')" id='show3353474565883211851'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('3353474565883211851')" id='hide3353474565883211851' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist3353474565883211851" style="display: none">Bug fixes:
+- Escape newlines in tabs in various places that we escape shell
+  characters.
+- Do not crash when a paste escape sequence is received with an
+  invalid base64 argument.
+- Fix a bug where EPS files displayed by imgcat did not include text
+  on macOS 10.10.
+- Update fish shell integration version since fish 2.2 support was
+  dropped.
+- Fix a bad interaction between "Open tmux windows as tabs in existing
+  window" and "Automatically hide the tmux client session after
+  connecting" where the gateway.
+- Fix a bug where tmux integration window states were lost when
+  detaching.
+- Fix a bug where ~/Library/Application Support/iTerm/ssh_config was
+  not used.
+- Fix a crash in lines with just the right number of fullwidth marks.
+
+New features:
+- Support the "frontmost" applescript property.
+- Double click a window in the tmux dashboard to reveal it.
+
+SHA-256 of the zip file is
+90e6f2bd3eb2d245f4ab2c9f856c627c8a1536bac024fb3989db417bc3147565
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_14.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.14 (OS 10.8+)
+</a></h4>
+<p>
+This is the recommended build for most users. It contains a bunch of bug fixes.
+
+<br>
+<p><a href="javascript:showId('5089471302461442822')" id='show5089471302461442822'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('5089471302461442822')" id='hide5089471302461442822' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist5089471302461442822" style="display: none">- Fix a bug where where tmux integration windows would silently fail to
+  open when tmux was not in UTF-8 mode.
+- Fix a bug where you could get stuck in secure input mode.
+- Fix a bug where Let's Move would not remember the preference to
+  suppress its offer.
+- Fix a bug where maximized panes in tmux integration mode would get
+  confused when the window resized.
+- Show a bell emoji in the window title when there's only one tab and it
+  would have a bell icon.
+- Add more menu items to adjust multiline paste warnings.
+- Fix a bug where automatic profile switching didn't work in fullscreen
+  windows.
+
+SHA-256 of the zip file is
+bed63a85d48d4e0ec2f49858aa4a6ce5dcb7bb3eaf78f87124ed5239b6a7e936
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_13.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.13 (OS 10.8+)
+</a></h4>
+<p>
+This is the recommended build for most users. It contains a bunch of bug fixes, including fixes for some crashers.
+
+<br>
+<p><a href="javascript:showId('196976789891818423')" id='show196976789891818423'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('196976789891818423')" id='hide196976789891818423' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist196976789891818423" style="display: none">- When the password manager checks if you're at a password prompt,
+  accept asterisks echoed back.
+- Fix a crash when characters have a crazy number of combining marks.
+- Fix a bug with restoring minimized windows.
+- Fix a bug where row heights did not change properly in profile
+  lists.
+- Fix an exception at startup when saved state is corrupted.
+- Add an advanced preference to disable DNS lookups on text in the
+  terminal window.
+- Fix imgcat support for PDFs.
+- Fix a bug where secure input could get stuck.
+- Mitigate a leak of web views.
+- Fix a crash when using the color picker's eyedropper.
+- Prevent a crash when resizing a session.
+- Fix a crash when the prefs window is closed while the file picker is
+  open.
+- Fix a bug where a maximized tmux pane's contents would appear behind
+  a per-pane titlebar.
+- Explain why you're being prompted to confirm quitting behind a
+  disclosure triangle.
+- When closing a tmux tab that requires the kill/hide confirmation and
+  the session-closing confirmation, only show the kill/hide confirmation.
+- When creating a new tab using the default profile when the current
+  tab is a tmux tab, refer to the gateway session's current directory
+  for the purposes of recycling the working directory.
+- Fix a bug where focus reporting misbehaved when there were multiple
+  panes in a tab.
+
+SHA-256 of the zip file is
+b32cb66bf7fafd22c92adca4ea2d10c23e58d1398627aea5b15f1c396495b574
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_12.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.12 (OS 10.8+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('8639938658476473800')" id='show8639938658476473800'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('8639938658476473800')" id='hide8639938658476473800' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist8639938658476473800" style="display: none">- Reduce system log spam
+- Fix a bug where maximize split panes in a fullscreen window in tmux
+  integration could cause the session to be the wrong size.
+- Fix a bug where imgcat was broken on macOS 10.10 and earlier.
+- Don't send anti-idle codes to the connecting tmux session in
+  integration mode.
+- Adjust the color of the border for fullscreen tmux integration
+  windows to be less obtrusive.
+- Fix a bug where window restoration would give a "stuck" session when
+  restoring a tmux integration session.
+- Load Patreon patron names at runtime.
+- Fix a bug where session restoration failed on macOS 10.12 because
+  Apple broke syslog.
+
+SHA-256 of the zip file is
+d500c5e376a05df6896f92504961142b7721efb9e235232d39545c7a3c5b7507
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_9.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.9 (OS 10.8+)
+</a></h4>
+<p>
+This is the recommended build for most users. It contains a bunch of bug fixes, including fixes for some crashers.
+
+<br>
+<p><a href="javascript:showId('6617451993384308303')" id='show6617451993384308303'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('6617451993384308303')" id='hide6617451993384308303' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist6617451993384308303" style="display: none">- Fix crashes in preferences panel.
+- Add advanced preference to make adaptive framerate FPS adjustable.
+- Fix bugs with copying tab characters.
+- Fix a bug where which tabs go with which windows got messed up when you quit
+  iTerm2 while tmux integration was running.
+- Fix a bug where pasting a string with surrogate pairs could paste nothing at
+  all if the pair was split when chunking.
+- When a custom paste action extends the selection, it now copies to the
+  pasteboard (if so configured).
+- Remember the profiles panel's frame when restarting.
+- Fix a bug where the color picker's eyedropper didn't work on other displays
+  than the main one.
+- Show a warning before decoding images for security purposes.
+- If you had hit a bug earlier where a preference was saved that broke
+  pasting, unset that preference automatically.
+
+SHA-256 of the zip file is
+4e4b9decbc2327c795fa114156213d95482a882eab188825dfeb8df1ed13b9ab
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_8.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.8 (OS 10.8+)
+</a></h4>
+<p>
+This is the recommended build for most users. It contains bug fixes.
+
+<br>
+<p><a href="javascript:showId('3386330211964588866')" id='show3386330211964588866'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('3386330211964588866')" id='hide3386330211964588866' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist3386330211964588866" style="display: none">- Fix a bug where iTerm2 would hang if a profile's command terminated quickly,
+  or could not be executed.
+- When a profile's command can't be executed, print the reason for the failure
+  to the session.
+- Fix a bug where you could remember the "cancel" action when prompted about
+  pasting.
+- Make Japanese keyboards produce a backslash when Yen is pressed so long as
+  shift is not also pressed.
+
+SHA-256 of the zip file is
+fae85a7fd1c0c7706031b103dab6c2cf65bb6a82b4d0fbb0be9f75467875ae64
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_7.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.7 (OS 10.8+)
+</a></h4>
+<p>
+This build fixes many bugs including a frequent crash.
+
+<br>
+<p><a href="javascript:showId('4178024328564547333')" id='show4178024328564547333'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4178024328564547333')" id='hide4178024328564547333' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4178024328564547333" style="display: none">- Fix a crash when toggling the "hotkey window hides when focus is lost" box.
+- Fix a crash when switching away from the prefs window after closing the color
+  picker.
+- Fix a crash when you close prefs window while editing an untokenized value in
+  the tags field.
+- Support ipv6 DNS lookups for determining if a hostname is legit for semantic
+  history. Don't cache temporary DNS failures.
+- Fix a bug where the cursor position is not correctly restored in the main
+  screen when attaching to a tmux integration session in the alternate screen.
+
+Changes from the beta-only 3.0.6:
+
+Bug fixes:
+- Fix a crash on 10.9 and earlier when tabs don't have close buttons and a tab
+  has a long title.
+- Fix a crash when you paste into the textview where you press a global
+  shortcut.
+- Fix a crash on OS 10.8 when using the color picker.
+- Fix a crash when a monitor is unplugged while using tmux integration.
+- Fix a bug where tmux windows restore the wrong size when scrollbars are
+  disabled.
+- Fix a crash when searching for word boundaries on double-click or cmd-hover.
+- Fix bug where the range of underlined text was wrong when holding cmd and
+  hovering over text with backslashes.
+- Fix a bug where split pane titlebars would disappear after exiting Back In
+  Time.
+- Fix a bug where seeking while in Back In Time would jump to the earliest
+  timestamp.
+- Fix a bug where windows in the Window menu could not be assigned hotkeys.
+- Fix a bug where pressing esc in a search field would not allow its containing
+  panel to close (such as prefs).
+- Fix a bug where unused space was left at the bottom of a fullscreen window
+  with a horizontal split in tmux integration windows.
+- Fix a bug where a fullscreen window with a horizontal split would cycle between
+  two different sizes forever.
+- Fix typo in 'See Tips of the Day?' prompt.
+- Fix a bug where semantic history would not work on very long lines (or when
+  ignoring hard newlines caused a line to appear very long)
+- Fix a bug where split panes in tmux integration windows would sometimes not be
+  aligned to the top of their containers.
+
+Minor enhancements:
+- Make "Keep background colors opaque" apply to the background color of selected
+  text.
+- Trim trailing newline and adjacent whitespace when selecting the output of the
+  last command.
+- Reduce minimum adaptive frame rate to 20 fps.
+- Send prefs as XML in crash reports to make it easier to reproduce.
+- Improve performance of finding word boundaries. This should fix occasional
+  hangs when pressing cmd while the mouse hovers over a very long word.
+- Dim the cursor when dimming a window's contents.
+- Add an advanced preference to make the "session restored" banner optional.
+
+SHA-256 of the zip file is
+d4fae6dd9e7f3173791bd7b56bc4fd3520fb197a374776833735e0f95fd6fa20
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_5.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.5 (OS 10.8+)
+</a></h4>
+<p>
+This build contains a number of bug fixes.
+
+<br>
+<p><a href="javascript:showId('3154291480586312013')" id='show3154291480586312013'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('3154291480586312013')" id='hide3154291480586312013' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist3154291480586312013" style="display: none">Bug fixes:
+- Improve support for URLs with non-ASCII characters in various places.
+- Make clicking in a per-pane titlebar make the session first responder.
+- Fix bug where hotkey window is not properly restored.
+- Change permissions on paste and command history files to be only
+  user-readable.
+- Update current prompt's Shell Integration mark when clearing the screen.
+- Respect vim special characters in advanced paste regex substitution string.
+- Improve cold start time and memory usage by only creating preferences panel
+  when needed.
+- Fix a bug with focus follows mouse where the window whose textview was under
+  the cursor would be made key, even if a higher-ordered window was under the
+  cursor (just not the textview part).
+- Improve performance when selecting by word on giant strings, which happens on
+  right click, smart selection, and pressing or releasing the cmd key.
+- Show a "no image" character when image display is disabled and an image is
+  received.
+- Visual improvements to the Appearance prefs tab.
+- Offer to paste without newline when you're warned while pasting at shell
+  prompt.
+- Indicate the command that will be run before running it when the user asks to
+  install shell integration.
+- Reduce CPU utilization when idle.
+- Make check marks in the popup list for selecting a profile's schemes more
+  accurate.
+- Allow the badge font in advanced prefs to specify a style, like
+  Courier-Oblique.
+- Improve distinction between selected and unselected tabs in high contrast
+  themes.
+- Don't crash if the badge is set by escape sequence to empty string.
+- Properly center tab labels when the close button is hidden.
+
+New features:
+- Add an off-by-default advanced pref to draw yellow marks for commands stopped
+  by a signal.
+
+SHA-256 of the zip file is
+a0081635383a7a1eda12c99c2800979168bfa757b737b0b15a2639bdb2ce6f95
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-3_0_4.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.0.4 (OS 10.8+)
+</a></h4>
+<p>
+This is the recommended build for most users.
+
+<br>
+<p><a href="javascript:showId('8264953539860107278')" id='show8264953539860107278'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('8264953539860107278')" id='hide8264953539860107278' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist8264953539860107278" style="display: none">Version 3.0.4 of iTerm2
+
+This is a major new version of iTerm2, and the first "stable" release in the
+3.0 series. It contains hundreds of bug fixes and many new features since
+2.1.4. All the details are at http://iterm2.com/version3.html
+
+SHA-256 of the zip file is
+0cb3dc26a47ea7f76ac43156ff1c88163726c13154d695b254161a91ce948ad6
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 2.1.4 (OS 10.7+, Intel-only)
+</a></h4>
+<p>
+This is the recommended build for most users. It is updated to work well with El Capitan.
+
+<br>
+<p><a href="javascript:showId('5178075036184831702')" id='show5178075036184831702'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('5178075036184831702')" id='hide5178075036184831702' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist5178075036184831702" style="display: none">- Fixes a bug where split screen in El Capitan had black bars around the window.
+- Fixes a bug where closing a tab in tmux integration would cause the connection to close with a tmux protocol error.
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-2_1_3.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 2.1.3 (OS 10.7+, Intel-only)
+</a></h4>
+<p>
+This is the recommended build for most users. It contains a bug fixes for El Capitan.
+
+<br>
+<p><a href="javascript:showId('2386535505864306881')" id='show2386535505864306881'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('2386535505864306881')" id='hide2386535505864306881' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist2386535505864306881" style="display: none">- Bug fixes for El Capitan. Properly restore multiple fullscreen windows and avoid a flash when
+  switching spaces with split fullscreen windows.
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2-2_1_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 2.1.1 (OS 10.7+, Intel-only)
+</a></h4>
+<p>
+iTerm2 v2.0: this is the recommended for most users. It requires OS X 10.7+ and an Intel CPU.
+
+<br>
+<p><a href="javascript:showId('4945780303286552449')" id='show4945780303286552449'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4945780303286552449')" id='hide4945780303286552449' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4945780303286552449" style="display: none">- Change URLs for credits and bug filing. RIP Google Code.
+- Add a method to notify users when iTerm2 3.0 enters Beta so they can opt in.
+- Support multiple parameters to DECSET (fixes a bug with tmux 2.0 where the cursor disappears, among others).
+- Fix a bug where copying a string ending in a surrogate pair fails to copy at all.
+- Fix a bug where paste didn't work on 32-bit machines.
+- Change role for URL handling from editor to shell.
+- Option-click in scrollback history should not try to move the cursor.
+- Fix bug where some emoji don’t render on 10.10.3.
+- Change how the highlight is rendered in the profiles table to look better on 10.10.
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2_v2_0.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 2.0 (OS 10.7+, Intel-only)
+</a></h4>
+<p>
+iTerm2 v2.0: this is the recommended for most users. It requires OS X 10.7+ and an Intel CPU.
+
+<br>
+<p><a href="javascript:showId('814535211252508711')" id='show814535211252508711'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('814535211252508711')" id='hide814535211252508711' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist814535211252508711" style="display: none">Major New Features
+------------------
+- Deep tmux integration!
+  Have you ever had an ssh session lost because you had to reboot, had a network
+  failure, or the power went out? Are you tired of giving up a keystroke to tmux
+  or screen? Suffer no longer! iTerm2 and tmux are now deeply integrated. By
+  installing a special version of tmux, it gains the ability to speak directly to
+  iTerm2. When you run tmux with -CC, iTerm2 will open real, native windows or
+  tabs for each tmux window. The whole state of your tmux session is reflected in
+  native iTerm2 windows. As you interact with a window, your typing is sent back
+  to tmux. Any time you resize a window, add a split pane, close a split pane,
+  close a window, or open a window (with Shell-&gt;tmux-&gt;new window), that
+  action happens in tmux as well as in iTerm2.
+  All the details are at https://code.google.com/p/iterm2/wiki/TmuxIntegration
+
+- A "Toolbelt" has been added. It's a drawer that opens to the right of a
+  window and shows running jobs, paste history, a field for taking notes, and
+  lets you open new windows/tabs/splits. Look for the Toolbelt menu.
+
+- Add "triggers." A trigger is an action that is performed when text matching
+  some regular expression is received in a terminal session. More info here:
+  http://www.iterm2.com/triggers.html
+
+- Add "coprocesses." A coprocess is a process, such as a script, that receives
+  input from a terminal and whose output is fed into the terminal session as
+  though the user were typing it. You can use them to automate interaction with
+  scripts, download files with ZModem, and more. More info here:
+  http://iterm2.com/coprocesses.html
+
+- You can now edit the smart selection regexes in
+  Prefs&gt;Profiles&gt;Advanced. You can also assign actions that are added to
+  the context menu when you right click on text that matches a smart selection
+  rule.  More info here:
+  http://www.iterm2.com/smartselection.html
+
+- Support for OS 10.7 features including fullscreen, retina graphics, and
+  window restoration.
+
+
+New Preferences
+---------------
+- Add support for tiled background images (Foy Savas)
+- Add a preference to toggle hiding of the menu bar in non-Lion fullscreen.
+  Useful in Mavericks multi-monitor setups.
+- Make tabview toggleable in fullscreen.
+- Add option to dim background windows.
+- Add option to dim only foreground colors.
+- Add UI for adjusting dimming amount.
+- Add UI to make blur radius configurable.
+- Add hidden pref MaxPasteHistoryEntries.
+- Add preference to hide tab's activity indicator.
+- Add option to draw red stripes in the background to indicate input being sent
+  to all terminals.
+- Add preference to disable dimming animation.
+- Add option to profiles to send text to shell at startup.
+- Add option to disable session-initiated printing.
+- Add support for loading prefs from a custom folder (e.g., Dropbox) or URL.
+  This makes it easy to share a config between multiple machines or people.
+- Add auto logging of sessions. When enabled (per-profile), all input received
+  from the host in a session is saved to a file tagged with the window, tag,
+  and pane number, plus the time and date of initiation.
+- Add next/previous pane action.
+- Change around prompt-to-quit options, adding "always/never/only if jobs
+  besides ... are running" to profiles-sessions.
+- Add option to copy trailing newlines when making a selection that includes a
+  whole line at its end.
+- Add preference to disable transparency when entering fullscreen mode.
+- Improve "Terminal.app Compatibility" key preset to more accurately emulate
+  Terminal.
+- You can now configure what happens when you cmd-click on a filename in
+  Prefs&gt;Profiles&gt;Advanced.
+- Add key action to move tab left/right.
+- Add "advanced" directory settings for separate tab, window, and pane settings.
+- Add preference for setting locale vars.
+- Add preference to disable saving lines to the scrollback buffer while in
+  alternate screen mode.
+- Add option to always copy preferences to prefs stored in a custom folder.
+- Add a new panel to prefs to make mouse actions configurable.
+- Add option to make triple-click select a whole wrapped line rather than just
+  one row.
+- Add hidden option AutocompleteMaxOptions to adjust number of autocomplete
+  entries.
+- Add hidden option PasteHistoryMaxOptions to adjust number of paste history
+  entries.
+- Add hidden variable URLCharacterSet that defines characters that are part of
+  a URL.
+- Disable title reporting unless hidden pref AllowInsecureTitleReporting is set
+  to true.
+- Add general preference "Adjust window for font size change". Turn it off so
+  that the window size stays fixed as the font grows or shrinks (thanks,
+  keeyipchan!).
+- Add hidden preference PinchToChangeFontSizeDisabled to turn off pinch to
+  change font size
+- Ask for confirmation before deleting a profile.
+- Add boolean hidden pref, OpenFileInNewWindows. When you open a file (e.g., a
+  shell script) in finder with iTerm2, this controls whether it opens in a new
+window or tab.
+- Additional window styles: bottom and left of screen.
+
+New Terminal Features
+---------------------
+- Add support for italics (Stefan Schüßler)
+- Change RIS code to move the cursor to the origin (saitoha).
+- Convert text to NFC form more aggressively, which should lead to latin
+  characters with accents rendering more consistently with certain fonts like
+  Inconsolata, which lacks some combining marks.
+- Add ITERM_SESSION_ID environment variable that identifiers the window, tab,
+  and pane number of each session.
+- Add escape code "Esc c" to reset terminal.
+- Add new escape code ESC ]6;1;bg;*;default^G to restore tab color to default.
+- Add support for reporting focus lost/gained. esc[?1004h turns it on; then the
+  terminal sends esc[I when focusing, esc[O when de-focusing. Send esc[?1004l
+  to disable.
+- Implemented bracketed paste mode (this is cool, see vim script here:
+  http://stackoverflow.com/questions/5585129
+- Define VLNEXT and VDISCARD in the term by default.
+- Add support for the "screen" terminal's way of setting the window title.
+- Support SGR (1006) mouse reporting.
+- Allow OSC 4 to set color of first 16 palette entries.
+- Add support for OSC 52 (clipboard integration--thanks, saitoha!).
+- Add support for DECSCUSR which lets the terminal change the cursor shape and
+  blink.
+- Add support for DECSTR (esc [!p)
+
+Other Features
+--------------
+- Improve rendering on glyphs with multiple combining marks.
+- When you cmd-click on a filename in a diff, remove the a/ or b/ prefix and
+  replace with the real directory to open the file.
+- Cmd-opt click on a URL to open it without bringing the browser to the front.
+- Improve "send input to all sessions", adding new modes: 1) send to all panes
+  in current tab, 2) to all sessions in current window, and 3) to an arbitrary
+  collection of panes (toggled with context menu).
+- You can toggle send input to all tabs/panes by re-pressing the keystroke that
+  got you into that mode.
+- Draw a dotted line around maximized sessions.
+- Add support for multiple saved window arrangements.
+- Add decimal <-> hex conversion to right-click context menu when a number is
+  selected.
+- Add new cmd-opt-shift-H and cmd-opt-shift-v interface for opening a split
+  pane with a particular profile.
+- Allow pinch gesture to change font size.
+- Make cmd-[ and cmd-] work when a pane is maximized.
+- Add "find cursor" feature (cmd-/) that highlights the cursor location. Useful
+  when you have a huge terminal, this makes it easy to quickly find a lost
+  cursor. If activated with the shortcut cmd-/, continuing to hold cmd will keep
+  the highlighting active.
+- Add ability to drag split panes around by pressing cmd-opt-shift and drgging.
+- Add ability to split a pane by dragging a tab into a terminal session.
+- Add "move session to split pane" option to context menu.
+- Add "restore arrangement" to dock menu.
+- Add cmd-= as shortcut for duplicating a profile
+- By default, a three-finger click on a trackpad emulates the middle button
+  (which by default performs Paste).
+- Add ability to change profile from Edit Current Session.
+- Change mouse cursor to indicate that mouse reporting is on.
+- Add cmd-shift-opt-T to open a new tab using the current session's profile.
+- Change default global key bindings to cmd-shift-arrows to move tab left/right.
+- Add menu item to move tab left/right.
+- Add title bars to split panes that show the title. You can drag panes by
+  their titles, and there is a menu and a close button in it as well.
+- If no window is open, you can now select multiple items in the profiles and
+  window and choose split horizontally/vertically to open a new window with the
+  split.
+- Add tab colors to view menu and tab context menu (thanks, andreax79)
+- Add 'move session to window' context menu item.
+- When closing a session, free its scrollback buffer in a background thread to
+  avoid hanging.
+- Alt-click moves the cursor to the click position.
+- Press cmd-9 to go to the last tab.
+- Add menu item to toggle broadcasting input to the current pane (make
+  pane-by-pane toggling available to focus-follows-mouse users who couldn't
+  open a context menu in a deselected pane)
+- "Find" continues to search as new text appears.
+
+System Integration
+------------------
+- In Mavericks, when system prefs are set such that multiple screens share one
+  space, we only hide the dock and menu when a fullscreen iTerm2 window is on
+  the first screen.
+- Handle inserting emoji text in mavericks with cmd-ctrl-space.
+- Make dock and menu bar appear by moving mouse to top/bottom of screen in
+  non-Lion fullscreen mode. Remove hold-cmd-for-tabs.
+- Make it possible to launch iTerm2 from Applescript so it won't open any
+  windows automatically.
+- Add support for Growl 1.3.
+- Support Lion's Restore functionality.
+- For new users under Lion, xterm-256color will be the default terminal.
+- Add ability to open .itermcolors files by double clicking on them.
+- Add 'New Window (Default Profile)' to dock menu.
+- Make growl alerts clickable (thanks, soul.cake.tuesday.duck and bauerb).
+- Make find text typed in one tab appear in all tabs' find bars.
+- App bundle is now signed.
+- When a file or folder is dragged onto the dock icon, open it in a new tab
+  (not a new window).
+- Retina graphics
+
+Proprietary Escape Codes
+------------------------
+- Add escape code <Esc>]50;SetMark^G to perform Edit > Set Mark command.
+- Add escape code to steal focus: ESC ]50;StealFocus^G  (thanks, gordolio).
+- Add proprietary escape code esc]50;ClearScrollback^G to erase screen and
+  scrollback buffer.
+- Add proprietary escape code esc]50;CurrentDir=/Path/To/Directory^G to notify
+  iTerm2 of the current directory (so you can cmd-click on relative filenames
+  and we'll know where they are).
+- Add proprietary escape code <esc>]50;SetProfile=X^G to set the current
+  session's profile to the one named X.- Add proprietary escape code to send
+  text to clipboard. To use, send esc]50;CopyToClipboard=X^G followed by text
+  followed by esc]50;EndCopy^G, where X is a clipboard name from the set: ruler,
+  find, font, or general. If not specified, general is used.
+- Add esc]50;RequestAttention=x^G, where if x=1 the dock icon bounces and if
+  x=0 it stops.
+
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/stable/iTerm2_v2_0-LeopardPPC.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 2.0 (OS 10.5 and 10.6, Intel, PPC)
+</a></h4>
+<p>
+This build has a limited set of features but supports OS 10.5/10.6 and PowerPC. If you have an Intel Mac that runs OS 10.7 or newer, you don't want this.
+
+<br>
+</p>
+</div>
+<h3>Test Releases</h3><hr style="margin-top: 0pt; margin-bottom: 4pt" />
+<p>
+Test releases update many times a year and are occasionally unstable.
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_6beta5.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.6beta5 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('7146052187463375602')" id='show7146052187463375602'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('7146052187463375602')" id='hide7146052187463375602' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist7146052187463375602" style="display: none">3.1.6beta5
+Changes vs 3.1.6beta4:
+
+- Fix some bugs with selecting the wrong window in focus follow mouse.
+- When you duplicate a profile with a hotkey window, make the
+  duplicate profile not have a hotkey.
+- Reject more false 3-finger taps.
+- Respect 'open tmux windows as tabs in existing window' for windows
+  created at the command line with 'tmux new-window'.
+- Fix a bug where unburying a session could cause it to come back with
+  the wrong window type. Fixes a similar bug with undo-close.
+
+SHA-256 of the zip file is
+adbcdcd321ce7b98ddf39ade13323449603c8a5902e7a78091a55ceada0a0b3a
+</pre></p>
+</p>
+<p><a href="javascript:showId('older_1')" id='showolder_1'>&#x25b8; Show Older Versions</a>
+  <a href="javascript:hideId('older_1')" id='hideolder_1' style="display: none">&#x25be; Hide Older Versions</a>
+  <div id="changelistolder_1" style="margin-left: 15pt; display: none"><h3>Older Test Releases</h3>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_6beta4.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.6beta4 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('2857730017885521437')" id='show2857730017885521437'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('2857730017885521437')" id='hide2857730017885521437' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist2857730017885521437" style="display: none">3.1.6beta4
+Changes vs 3.1.6beta3:
+
+Bug Fixes:
+- Fix regex search that matches empty lines
+- Fix bug where inline images didn't alway show properly in non-Metal
+  renderer
+- Fix a bug where timestamps would get stuck on.
+- Fix a bug where having lots of empty lines could make state
+  saving very slow.
+- Warn when minimum contrast is very high since that causes text to be
+  always black or white.
+- Improve scrolling redraw frame rate with Metal renderer.
+- Fixes a memory leak.
+- Get inline images working with the Metal renderer.
+- Disable Metal renderer when not connected to power. Controlled by a
+  new advanced pref.
+
+Other Changes:
+- Add F21-F24 to Touch Bar
+
+SHA-256 of the zip file is
+a51e996113eb99933f5ed4557dc9ea4b8520dcb7891eac2c102fd06372d0d25c
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_6beta3.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.6beta3 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('909991249536200240')" id='show909991249536200240'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('909991249536200240')" id='hide909991249536200240' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist909991249536200240" style="display: none">Other Changes:
+
+- The setting "Open tmux windows as tabs in existing
+  window" no longer applies to new tmux integration
+  windows you create after attaching. The old behavior
+  prevented you from creating unattached windows in tmux
+  integration mode.
+
+Bug Fixes:
+- Fix a bug that caused iTerm2 to hang when using the
+  Metal renderer
+- Fix a few crashes
+- Temporarily disable the Metal renderer while a view is
+  being resized to avoid seeing it stretched.
+- Fix support for double-struck bold text in the Metal
+  renderer.
+- Fix a bug where new windows would draw incorrectly
+  sometimes when using the Metal renderer.
+- Turn off Metal renderer when Find or Paste views are
+  open because they don't always composite correctly.
+
+New Features:
+- Add an advanced setting to disable wraparound in
+  directional split pane navigation.
+- Add an advanced setting that allows TAB codes to wrap
+  around to the next line. This is useful to preserve
+  tabs for text you plan to paste but could break
+  backward compatibility.
+- Add an advanced pref to disable middle click closes
+  tab.
+
+SHA-256 of the zip file is
+92f84974eff399079d1116af20488a45222f0555fbd8e10433215056ed91f42f
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_6beta2.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.6beta2 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('9093806955828696703')" id='show9093806955828696703'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('9093806955828696703')" id='hide9093806955828696703' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist9093806955828696703" style="display: none">3.1.6beta2
+
+- Some bad memory leaks were fixed
+- Improved emoji support in Metal renderer
+- Fix a bug where the Metal renderer's availability wasn't tied to
+  ligatures being disabled in all cases
+- Fix support for moving sessions between retina/non-retina displays
+  when using Metal renderer.
+
+SHA-256 of the zip file is
+308913aa20c96e9cc04fd40ba18889a0c485d7b254dfc081d67c6dbf2bbbb328
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_6beta1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.6beta1 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('1529188413795558362')" id='show1529188413795558362'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('1529188413795558362')" id='hide1529188413795558362' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist1529188413795558362" style="display: none">3.1.6beta1
+
+This release features support for a new GPU-based renderer.
+It's off by default, but if you're feeling brave, you can
+turn it on in advanced prefs. For more info, see here:
+
+https://gitlab.com/gnachman/iterm2/wikis/Metal-Renderer
+
+New Features:
+- Off-by-default high performance renderer
+- Add support for REP escape sequence. This is on by default
+  only for Beta and Nightly build users.
+- Added "Edit Session" to the tab context menu.
+- Add buried sessions to status bar icon menu.
+- Add option to suppress restart session confirmation.
+- Sort files in Scripts menu.
+- Add support for OSC 10 and OSC 11 (color querying).
+
+Other improvements:
+- Unicode 9 widths are now on by default for High Sierra
+  users. This could cause problems for you if you ssh to a
+  machine that doesn't have support for this (such as a Mac
+  with an older OS, various Linuxes, etc.)
+- Improve the touch bar icon for adding a mark.
+- Update Solarized color presets to exactly match the
+  official spec with SRGB colors.
+- Add menu item to show third party licenses.
+- Improved support for tab colors with tmux integration.
+- Don't make the window under the mouse active when focus
+  follows mouse is on and you switch to another app and then
+  back to iTerm2 and the mouse hasn't moved.
+- Improve naming of modifier+number menu items in
+  Prefs>Keys.
+- Improve support for images wider than 256 columns.
+- Only show key icon in terminal with keyboard focus.
+- Disable smart cursor color when a non-box cursor type is
+  selected.
+- Improve performance of opening a window with the Profiles
+  tool present when there are many profiles.
+- Rate limit changes to window title.
+- Limit max length of tab and window titles for performance.
+- When the window is very narrow and you are resizing it
+  show only the geometry in the title.
+- Allow focus follows mouse to select non-hotkey windows
+  when a hotkey window has focus provided it's not an
+  auto-hiding hotkey window
+
+Bug Fixes:
+- Don't crash when you delete a password manager entry that
+  is your only one and you are editing the password
+- Don't crash when saving an arrangement but one of the
+  windows somehow had 0 tabs.
+- Draw the label "Tab Color" in the tab context menu in
+  white when using the dark theme.
+- The advanced preference for suppressing the tab-to-spaces
+  conversion warning was broken. Fix it.
+- Fix a bug where Zoom on Selection lost one line.
+- Make Reset, whether user initiated or with RIS escape
+  sequence, return to the primary buffer when in alternate
+  screen mode.
+- Improve legibility of find bar with dark theme.
+- Fix a bug where the touch bar didn't update when color
+  presets changed.
+- Fix a bug where hotkey windows appearing in a different
+  display than the currently key window (in another app)
+  would not receive focus and would forget which app was
+  previously active.
+- Fix a race condition where sessions wouldn't get killed
+  before quitting, causing them to restore as dead sessions
+  on the next launch.
+- Fix a problem where second and later tabs in a window with
+  a left-side tab bar that's limited by the 1/3 * content
+  size bound will have fewer columns than it should.
+- Fix parsing of CSI 38:2 to accept a color type.
+- When opening a new window when the app isn't active, such
+  as with Applescript, wait for the app to become active
+  before making the new window key.
+- Don't offer to turn off mouse reporting, paste bracketing,
+  or focus reporting when we transition from no hostname to
+  having a hostname. Fixes a problem with fish.
+- Disable paste bracketing for uploads.
+- Don't save uploads to paste history.
+- Fix a bug where the window frame was set incorrectly when
+  the menu bar is set to hide automatically, you use
+  non-native fullscreen windows, the hotkey window is a
+  floating panel, and the app is excluded from the dock and
+  menu bar
+- Fix a bug where function keys on the touch bar could not
+  be used as shortcuts in Prefs>Keys.
+- Don't unmaximize a tab when switching to the maximized
+  session from Open Quickly.
+- Fixes a crash in the wrapper process around login when
+  it's exiting.
+- Remove "dynamic" tag when duplicating a dynamic profile.
+- Fix a bug where the tags weren't visible in the list of
+  profiles.
+- Make iTerm2 active after switching spaces.
+- Fix a bug where characters after an inline image could be
+  misaligned.
+- Show session name in tooltip for tab
+- Fix a hang when entering/exiting native fullscreen when
+  progress indicators were going.
+- Show the correct port number in the error message
+  displayed when secure copy fails.
+- Fix a bug where non-hotkey windows appear when showing the
+  hotkey window while iTerm2 is not active.
+
+SHA-256 of the zip file is
+5a414950dde2ee7733dc51018d136249fabb4140428bf740d0280167c88a4fc3
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_5_beta_2.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.5.beta.2 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('2667383295358688260')" id='show2667383295358688260'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('2667383295358688260')" id='hide2667383295358688260' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist2667383295358688260" style="display: none">Bug fixes:
+- Fix a very frequent crash for users of the Jobs tool.
+- Fix a bug where double-tap shift to open a hotkey window
+  didn't work.
+- Prevent a crash when the window size is incorrectly
+  reported as 0x0.
+- Allow key bindings with the action "Select Menu Item",
+  "New Window", "New Tab" and "Undo" to work when there is
+  no terminal window.
+- If the password manager is opened by a trigger but you
+  have to authenticate to open the password manager,
+  autoselect the proper account after auth.
+- Require a minimum delay between taps of a modifier key to
+  open a hotkey window.
+- Don't store more than 1000 recently used directories.
+- Prevent descenders from lines above the screen from
+  hanging down into the screen area.
+- Add opt-forward delete as a shortcut for delete word
+  forward in the Natrual Text Editing preset.
+- Accept ~ in HTTP URLs for smart selection for new
+  installs.
+
+New features:
+- Add support for the REP escape sequence, but it's off by
+  default.
+
+SHA-256 of the zip file is
+49a33f0e4b48a28b1caa9139c80e84e388f996aa6757035341604229f9277ddb
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_5_beta_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.5.beta.1 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('8214758236525725347')" id='show8214758236525725347'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('8214758236525725347')" id='hide8214758236525725347' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist8214758236525725347" style="display: none">Bug fixes:
+- If you press Fn+Ctrl+Key send Ctrl+Key, not Key. A strange
+  behavior dating back to the old iTerm.
+- Fixes some crashes, including a very frequent crash caused
+  by a bad interaction between Sparkle and user defaults.
+- Prevent high sierra tabs the "right" way, by overriding a
+  method in NSWindow, rather than just setting a user
+  default.
+- The tab control character no longer changes the background
+  color of cells it skips over.
+- Don't send two newlines when you launch iTerm2 with a
+  shell script (e.g., by double clicking one in Finder)
+- Show Services in the context menu when more than one line
+  of text is selected (up to 10k lines).
+
+New features:
+- When excluded from dock and app switcher, add Check for
+  Updates to status icon in menu bar.
+- Adds an advanced preference to change how line height is
+  calculated, which improves results for Input Mono
+  Condensed and acts more like Terminal.app.
+- When at a password prompt and the key icon is showing,
+  you can now click the key icon to open the password
+  manager.
+
+Other changes:
+- Improve language in prefs dialog to make it clear when
+  you're getting beta vs release builds on autoupdate.
+
+SHA-256 of the zip file is
+39af0b62912003cf21125a339cf1ad47580048b01910d605aae4a168a9d71274
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_4_beta_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.4.beta.1 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('7141384041789413512')" id='show7141384041789413512'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('7141384041789413512')" id='hide7141384041789413512' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist7141384041789413512" style="display: none">Bug fixes:
+- Fix navigating to split pane above/below/left right not
+  wrapping around.
+- Prevent blur values over 24 to prevent hitting a bug in
+  high sierra (values over 26 make the blur funny colors and
+  values over 24 are too slow).
+- Fix line wrapping of multi-line badges.
+- Allow windows to be larger than a screen when displays
+  have separate spaces is turned off.
+- Reduce the impact of proc_pidinfo and statfs hanging.
+- Tweak position of paste button in advanced paste.
+- Fix bug in high sierra where eydropper in color picker
+  didn't go away after selecting a color.
+- Remember the size of a hotkey window after resizing it and
+  then adding a new tab.
+- Fix a bug where opening an autocomplete window could cause
+  a hotkey window to hide.
+- If you scroll up to the top of a window and then clear the
+  buffer and then new output arrives, it now begins
+  autoscrolling when the cursor reaches the bottom.
+
+New features:
+- Add an advanced preference to use the typeface's box
+  drawing glyphs instead of the custom box drawing code.
+
+SHA-256 of the zip file is
+fb33a517c57353a8e6459321368fd4be3691abd5d02413fbe3fece29e63b2d22
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_3_beta_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.3.beta.1 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('4942809128053553989')" id='show4942809128053553989'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4942809128053553989')" id='hide4942809128053553989' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4942809128053553989" style="display: none">Bug fixes:
+- Restore subpixel antialiasing, which was broken in
+  3.1.2.beta.2.
+- tmux 1.8 can't reuse the current directory. Detect it and
+  don't try, since trying causes new sessions in tmux
+  integration to start in the root.
+- Silence messages after disconnecting tmux integration from
+  tmux 2.5.
+- Disable High Sierra's system tabs.
+- Fix a bug where you couldn't use the password manager on
+  macOS 10.11 because the local authentication framework
+  doesn't work right until 10.12.
+- Fix a bug where new lines at the bottom of the screen were
+  initialized with underlines, if underlining was on prior
+  to the linefeed.
+
+New features:
+- Allow disabling ligatures for FiraCode.
+- Add advanced setting to make scroll wheel response very
+  sensitive.
+- Update announcement button appearance when window
+  appearance changes to avoid a white-on-white button.
+
+SHA-256 of the zip file is
+406073f0cb1a53b48cdffe9fd543942436c69c609ee917c4c1b76c34bf183edb
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_2_beta_2.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.2.beta.2 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('8633273599016741309')" id='show8633273599016741309'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('8633273599016741309')" id='hide8633273599016741309' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist8633273599016741309" style="display: none">Security update:
+The ability to perform DNS requests on hover has been
+removed (it was off by dfeault since 3.1.1). It is no longer
+an option.
+
+Bug fixes:
+- Fix a bug where hotkey windows that had only double-top
+  but no hotkey would open when you pressed 'a'
+- If you have touch ID, allow the password manager to be
+  opened with a password or with touch ID
+- Fix issues where curved box-drawing characters didn't line
+  up with other box-drawing characters
+- Fix a bug where closing an inactive tab from applescript
+  instead closed the current tab.
+- Fix a bug where native full screen windows restored from
+  an arrangement would open on the wrong screen
+- Add an advanced pref to remove the status bar icon when
+  the app is excluded from the dock
+- When the app is excluded from the dock, don't underlap the
+  menu bar when in non-native full screen.
+- Don't treat halfwidth katakana sound marks as combining
+  marks.
+- Turn off AquaSKK-compatible key handling by default.
+  Multiple users experienced issues where keyboard input
+  would break after they pressed a repeating key.
+- Fix a bug where tags weren't visible in the profiles list
+  in the toolbelt.
+- Don't open a window to show a man page if you've
+  customized the man page command to a command that ends in
+  an ampersand.
+- Make the selected tab indicator more subtle when tabs are
+  colored.
+- Fix a bug where faint text punched a hole through the
+  window.
+- Fix a bug where the "dark background" or "retina and dark
+  background" thin strokes setting caused thin strokes to be
+  rendered when the background was light.
+- Make the line under the tab bar darker in dark themes.
+- Fix various crashes.
+- Reduce logging to the system log.
+
+SHA-256 of the zip file is
+66b167e40819c0e36501cacd61fd2d0e638de35e6d984d827a7467d36af7c722
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_2_beta_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.2.beta.1 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('2629491393699844578')" id='show2629491393699844578'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('2629491393699844578')" id='hide2629491393699844578' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist2629491393699844578" style="display: none">This is a new numbering scheme for betas. This is the first beta of
+3.1.2.
+
+IMPORTANT SECURITY UPDATE:
+
+- Mitigates a security risk where text in the terminal could be
+  exposed by DNS lookups. More info here:
+
+  https://gitlab.com/gnachman/iterm2/wikis/dnslookupissue
+
+All users should upgrade to 3.1.2.beta.1 or 3.1.2 (stable).
+
+Other changes:
+- Built with the 10.13 SDK, so maybe that changes something?
+- Restore hotkey windows' screen setting on restore.
+- Hopefully fixes a bug where tabs dragged when they shouldn't have
+- Performance improvements when there is a long scrollback buffer
+- Reorganize a bunch of advanced prefs that used to be experimental
+  features into different categories
+- Accept any legal IDN character in a URL you cmd-click on
+- Fix a bug where the cursor type radio buttons overlapped the
+  blinking cursor checkbox in prefs.
+
+SHA-256 of the zip file is
+daadf704120569e87f76139ca4e7d292c57a0fe3285557bbd188c1a2c467b28d
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_10.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.10 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('9126318040473325488')" id='show9126318040473325488'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('9126318040473325488')" id='hide9126318040473325488' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist9126318040473325488" style="display: none">This is a release candidate for 3.1.
+
+Bug fixes:
+- Fixes an error when beta 9 was signed with the wrong certificate
+- Fixes a crash when opening the password manager while one is already
+  open.
+
+SHA-256 of the zip file is
+90d1f289f736a1b13fa1be9a6ffc6df61a0f1aa1e517eb50c5f105792398390d
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_9.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.9 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('5431837921205271959')" id='show5431837921205271959'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('5431837921205271959')" id='hide5431837921205271959' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist5431837921205271959" style="display: none">Bug fixes:
+- Fix a bug where dimming foreground colors didn't work
+- Fix a hang when changing displays.
+- Don't hang when performing a search when there is a very long line.
+  Only search the first 500,000 characters of any line.
+
+Other improvements:
+- Tweak the outline of the selected tab when there are colored tabs in
+  the window
+- Adjust how framerate is lowered to reduce the appearance of hangs
+  when a bunch of output appears after running a command.
+
+SHA-256 of the zip file is
+ee8e6425a62f7875cde887002c688182d28636d1cc837dbde0d3819600335c55
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_8.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.8 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('4571960284159624856')" id='show4571960284159624856'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4571960284159624856')" id='hide4571960284159624856' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4571960284159624856" style="display: none">Bug fixes:
+- Fixes a very common crash.
+- Fixes a bug where images got their first column truncated.
+- Fixes a bug where dimming and cursor boost didn't work.
+- Fix saving, copying, and inspecting broken images from imgcat.
+- Command line parsing now supports single quotes.
+
+SHA-256 of the zip file is
+336d1aa3aa8cde24e9efd8eb9adba0c2f894e965c93ae5d9a0217fdbeaae8b3f
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_7.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.7 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('2992650257905513533')" id='show2992650257905513533'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('2992650257905513533')" id='hide2992650257905513533' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist2992650257905513533" style="display: none">Bug fixes:
+- If you change the preferred screen of a profile with a hotkey
+  window, it will now take effect immediately (used to have to close
+  and re-create the window)
+- The app-wide hotkey now switches back to the prevous app when iTerm2
+  has a native fullscreen window.
+- Fix a hang when navigating among split panes.
+- Fix a bug where the wrong range of a URL would get underlined for
+  cmd-click.
+- Fix a bug where "highlight text" triggers would highlight regex
+  lookaheads.
+- Fix a bug where searching for a regex might not select the entire
+  match.
+- Fix a bug where searching would select different matches each time
+  you typed a character instead of extending the current match.
+- Don't break ligatures if they intersect a background color change
+  unless the minimum contrast setting is in use.
+- Reduce console logging.
+- If the initial working directory ends in a slash remove it. That
+  confuses bash.
+
+New features in beta 7:
+- Copy images when using "Copy with Styles"
+- More options for when to use thin text strokes.
+- Add services that do not produce input and services that accept
+  text-only input to the services menu. Remove those that are not
+  generally useful to a terminal.
+- Change how "paste from selection" works to remember the last
+  selection instead of only working while the selection still exists.
+- Make colored tabs look nicer.
+- Use $HOME/Library/Application Support/iTerm2/Scripts if it exists.
+  Otherwise fall back to $HOME/Library/Application
+  Support/iTerm/Scripts.
+- Add an advanced pref to set the width of the vertical-bar cursor.
+
+SHA-256 of the zip file is
+98f7cbfbe3ca7babae137338522a5535622ef33c06d2363c81850128822b48d5
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_6.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.6 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('7011131947187382738')" id='show7011131947187382738'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('7011131947187382738')" id='hide7011131947187382738' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist7011131947187382738" style="display: none">IMPORTANT NOTE:
+If you used an older 3.1 beta, please note that ligatures must be
+manually enabled. They are now off by default so non-ligature-users
+will enjoy better performance.
+
+New features in beta 6:
+- Drag-drop from the jobs table into the terminal to paste the process
+  ID.
+- Add a new smart selection action to run a command in a new window.
+- Allow the window to fill the screen when zooming it rather than
+  insisting on being a multiple of cell size.
+- Add support for using the numeric keypad to change
+  tabs/windows/panes with modifier+numeric keypad number.
+- You can now hold option to scroll into history while in alternate
+  screen when scroll wheel is in send-arrow-keys-in-alt-screen mode.
+- Move reveal password into the password manager's right-click menu.
+  You can now safely double click on your passwords to edit them.
+
+Bug fixes in beta 6:
+- Fix a bug where you couldn't reliably start a tmux integration
+  session immediately after one ends.
+- Do not open the auto command history window when there are no
+  completions.
+- Add polish to the man page viewer accessible from the touch bar.
+- Improve performance of double clicking on an absurdly long word or
+  long line.
+- Fix a bug where the hotkey window would hide when a local
+  authentication dialog opened.
+- Fix a hang when a hotkey window opens the password manager.
+- Improve highlighting of search results.
+- Fix a crash when creating a new session.
+- Fix animation of hotkey windows when there are multiple screens.
+- Improve the appearance of the toolbelt with dark themes.
+- tmux 2.1 and earlier would throw errors when the initial directory
+  in tmux integration was not the default. Fixed.
+- Show a warning if the shortcut to toggle the app is the same as the
+  shortcut to toggle a profile window.
+- Fix appearance of cursor over double-width characters.
+- Improve latency of window title changes.
+- Fix a crash on 10.13.
+- Fix a bug where tmux window titles wouldn't change if the gateway
+  was buried.
+- Fix a bug where Applescript 'current window' would crash if there
+  was no current window
+- Fix a bug where modifiers weren't remapped at all if accessibility
+  permission was missing (they now get mapped for
+  non-system keystrokes).
+- Fix a bug where the http scheme was not visible in the list of
+  schemes a profile could be the handler for.
+- Fix a bug where you couldn't assign a keystroke to open a saved
+  arrangement as tabs.
+
+SHA-256 of the zip file is
+6c44f5433d37f4b481f31151fc9b96766c0559ea99a181bb9c1f867bfd9a2339
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_5.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.5 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('4339921553069348989')" id='show4339921553069348989'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4339921553069348989')" id='hide4339921553069348989' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4339921553069348989" style="display: none">3.1.beta.5
+
+New features:
+- Adds a new touch bar item to show status (e.g., git branch). Use
+  it2setkeylabel with a key name of "status" to change its value.
+- Adds an advanced pref to detect password prompts and change the
+  cursor.
+- Adds a cancel button to "what kind of tab/window do you want?"
+  when in tmux integration.
+- Select and right click on dates like "Tue, 16 May 2017 06:32:33
+  UTC" to show them in local time.
+- Adds an advanced pref to control which pane is focused when you
+  create a  split pane when using focus follows mouse.
+- Adds an advanced pref to set the man page viewer command.
+- Adds an advanced pref to keep CSI 3 J from erasing the scrollback
+  buffer.
+
+Bug fixes:
+- Changes the order of windows as exposed to applescript so they
+  will appear on back-to-front order.
+- Fixes a memory leak in the password manager window.
+- Fixes bugs in search where find next/previous would not always work.
+- Restores the progress bar in the find window.
+- Fixes text drawing problems in high sierra.
+- Fixes a bug where undo close session could cause a critical error or
+  tab without a session.
+- Fixes a bug where the retina-only setting for thin strokes was not
+  respected.
+- Fixes a bug where the app would hang when a networked file system
+  was in use.
+- Fixes a bug where tabs dragged out of the tab bar into a new
+  window caused the new window to appear in the wrong place.
+- Fixes a bug where windows would disappear when switching displays.
+
+Enhancements:
+- Changes the shortcut for bury session to cmd-opt-shift-B so it's
+  harder to do by accident.
+- Improves the appearance of the tab activity indicator.
+- Renames Don't Open Any Windows to Only Restore Hotkey Window to
+  clarify its purpose.
+- Updates the manpage touch bar button less frequently to reduce
+  distraction.
+- Makes it possible to open the tmux dashboard if there are no
+  windows opened and the tmux gateway is buried.
+- Fixes a visual jitter when changing font size.
+- Remembers the preferred size for a left-side tab bar. If the window
+  temporarily becomes too narrow to fit it, the tab bar will grow up
+  to the preferred size when the window expands.
+
+SHA-256 of the zip file is
+9b16a793b9f7001dfd190bb3318f79622b5bb590f3d423ea4cd5d17256df92ce
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_4.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.4 (OS 10.10+)
+</a></h4>
+<p>
+This is the recommended beta build for most users.
+
+<br>
+<p><a href="javascript:showId('4103040315579306580')" id='show4103040315579306580'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('4103040315579306580')" id='hide4103040315579306580' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist4103040315579306580" style="display: none">New features:
+- Add copy mode, like tmux's.
+  https://iterm2.com/documentation-copymode.html
+- Add an advanced preference to make auto logs filenames' formattable.
+- Use secure copy to download files selected with cmd-click on a
+  filename on a remote host and OSC 8 URLs with a file: scheme and a
+  host part.
+- You can now enable ligatures on any font, not only those in a
+  whitelist. Your font may not have ligatures, in which case this will
+  just hurt performance with no benefit.
+- New APIs for the still-experimental websocket server. Docs are in the
+  proto file.
+- Add an advanced preference to allow different tmux sessions to have
+  different profiles and to base the profile of the tmux sessions on the
+  session that attached to tmux.
+- Add a new touch bar button that reports status. Use it2setkeylabel set
+  status "message". You could use it to show the current git branch in
+  the touch bar. Pressing the button takes you to where the status was
+  set.
+
+Bug fixes:
+- Fix a bug where the screen jumped around when scrolling by dragging
+  the scroller.
+- Improve how network automounts are detected. This helps us avoid
+  stat()ing files on the network, which can cause hangs when semantic
+  history tries to discover if a file exsts.
+- Improve performance for moving line-by-line through a file by caching
+  CTLineRef's.
+- Keep process monitoring from eating too much CPU.
+- Validate secure copy hostname and user name to ensure legal characters
+  only are present.
+- Fix a crash when the font is broken and reports a 0 size.
+- When new search results appear after the find on page query is entered
+  allow them to be navigated to with find next/previous.
+- Fix a bug where non-shell integration users could not reuse the
+  current directory.
+- Force everyone to upgrade to new shell integration version because of
+  a security issue.
+- Allow the password manager to open even if another sheet is already
+  open.
+- Draw the default background color behind inline images.
+- Fix a bug where the "Edit password" button in the password manager
+  would change your password into dots.
+- Fix ligatures in Iosevka.
+- Fix a bug where the wrong job name would be shown in the titlebar when
+  there were two jobs that considered themselves foreground jobs.
+- Fix a bug where the order of windows in applescript was random, not
+  back to front.
+
+SHA-256 of the zip file is
+266745852d529cfbfdb17b839cdca03c09a8b420b2b8865a022d37830e0e89a0
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_3.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.3 (OS 10.10+)
+</a></h4>
+<p>
+This is the third beta of 3.1. Compared to 3.0.x, it contains many new features. Compared to the previous 3.1 beta, it contains a number of bug fixes and a handful of new features. 
+
+<br>
+<p><a href="javascript:showId('6779093216081106567')" id='show6779093216081106567'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('6779093216081106567')" id='hide6779093216081106567' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist6779093216081106567" style="display: none">New features:
+- Add support for OSC 8 to do hypertext links. The syntax is:
+  OSC 8 ; params ; url ST
+    params is zero or more colon-delimited key=value strings. The only
+  defined key is "id". Two adjacent hyperlinks with the same URL but
+  different "id"s will not highlight together on hover. id is
+  optional.
+    As usual, OSC is 'esc ]' and st is 'esc \'.
+- Trigger highlighting colors in a dynamic profile may use #rrggbb
+  notation.
+- Semantic history can now open file:line:column in VSCode.
+- Change "Open in current space" for hotkey windows to move the hotkey
+  window to the current space if it's already open on another space
+  when the hotkey is pressed.
+- Add an advanced pref to tweak the height of the underline cursor.
+- Add an experimental feature to draw an outline around underline and
+  vertical bar cursors to improve distinction from text.
+
+Bug fixes:
+- Add a send text request to the experimental API server
+- Add an advanced pref to use full-height cursor (including vertical
+  padding area)
+- Draw underline and vertical line cursor behind text to
+  improve readability.
+- Update to Sparkle 1.17 (with iTerm2-specific patches)
+- The first time the tmux gateway is auto-buried, open the
+  sessions menu and point out how to restore it with a popover hanging
+  off an invisible high-level window.
+- Prevent marks from getting absurdly wide when margins are
+  increased well beyond their defaults.
+- Add a clear button to captured output tool.
+- Fix a truly terrible memory leak.
+- Fix a bug where double-tap of a modifier didn't work to open a
+  hotkey window if it didn't also have a regular shortcut.
+- Fix a leak of inline images.
+- Fix a bug where sessions aren't restored correctly if the number of
+  scrollback lines is small.
+- Fix a bug where the find cursor UI would not be removed if you
+  switched sessions while it was open.
+- Improve performance in neovim by ensuring the display updates more
+  regularly.
+- Give scrollers a light appearance when the window has a dark
+  appearance so they'll be visible.
+- There's a hack to make the app active when the space changes
+  to a lion fullscreen window and the app isn't active. This is needed
+  only for LSUIElement apps, where the OS gets confused. Limit the
+  hack to LSUIElement mode since you could use spaces and have two
+  monitors.
+- Use SRGB for OSC 6 ; 1 ; bg ; red ; brightness ; Pc ST. It
+  was unstable before because I'd set the value in calibrated and then
+  convert it to SRGB when modifying a different component.
+- 6f9ab24 Don't crash on OSC 7 with bad URL.
+- Fix a bug where we incorrectly removed the tab color from
+  non-tmux sessions. It should have removed the tab color from tmux
+  sessions that have one in the tmux profile but not in the saved
+  session state.
+- Handle ligatures in Firacode better if had previously turned off
+  ligatures in a different ligature font.
+
+SHA-256 of the zip file is
+f8a49c5160c9a48d1d1f5f4eb12092cb09181bcc327ef70655a65251ce0d253e
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_2.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.2 (OS 10.10+)
+</a></h4>
+<p>
+This is the second beta of 3.1. Compared to 3.0.x, it contains many new features. Compared to the previous 3.1 beta, it contains a number of bug fixes.
+
+<br>
+<p><a href="javascript:showId('1663852652279548154')" id='show1663852652279548154'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('1663852652279548154')" id='hide1663852652279548154' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist1663852652279548154" style="display: none">Please see the changelog for 3.1.beta.1 for the new features in the 3.1 track.
+
+New features:
+- Allow opening multiple profiles from the profiles tool
+- Add an advanced setting to exclude background colors from copied
+  styles.
+- Allow switching to a pane, tab, or window by modifier+number even on
+  keyboards like AZERTY which require a modifier to press a number
+  (but you don’t need to press that modifier, just the one configured
+  in Prefs > Keys).
+  
+Bug fixes:
+- Escape newlines in tabs in various places that we escape shell
+  characters.
+- Fix main thread deadlock when getting a process list is slow.
+- Move hotkey window to screen with cursor when it's not animated.
+- Fix or prevent various crashes that I wasn’t able to reproduce.
+- Do not call syslog between fork and exec on child side. That’s a bad
+  idea.
+- Ignore a paste escape sequence with an invalid base64 block instead
+  of crashing.
+- Ignore non-latin1 input to ReportVariable instead of throwing an
+  exception.
+- Don't crash when we're sent an inline file with no or invalid data.
+
+SHA-256 of the zip file is
+734c9fe31761f5da993458e94d198f30921053bde0a0ef1bbedcdfdab07a7114
+</pre></p>
+</p>
+<h4 style="margin-top: 4pt"><a href="https://iterm2.com/downloads/beta/iTerm2-3_1_beta_1.zip"><img src="/images/Download.png" width=100 height=27 style="padding-right: 10pt">iTerm2 3.1.beta.1 (OS 10.10+)
+</a></h4>
+<p>
+This is the first beta for 3.1.0. It has gobs of new features and a handful of bug fixes.
+
+<br>
+<p><a href="javascript:showId('9218272879396865249')" id='show9218272879396865249'>&#x25b8; Show Changelog</a>
+<a href="javascript:hideId('9218272879396865249')" id='hide9218272879396865249' style="display: none">&#x25be; Hide Changelog</a>
+<pre id="changelist9218272879396865249" style="display: none">iTerm2 3.1.beta.1
+This is the first beta release of the upcoming 3.1 version.
+
+Marquee Features:
+-----------------
+- Add touch bar support.
+- Add support for ligature fonts.
+  * Use the touch bar to select tabs in full screen
+  * Assign labels to function keys with a shell script
+  * Create custom touch bar items in Prefs > Keys
+- Rework how hotkey windows work:
+  * You can have multiple hotkey windows. Each profile may have a
+    hotkey window associated with it.
+  * Multiple hotkeys can be bound to a single profile.
+  * Double-tap of a modifier key can open a hotkey window.
+  * Hotkey windows can be made to float over other apps' fullscreen windows.
+- Shell integration utilities have a lot of new programs.
+  Reinstall shell integration to get the run-down.
+- Add the ability to "bury" sessions. They get hidden in Session > Buried
+  Sessions. Changes Prefs > General > Automatically hide the tmux client
+  session to automatically bury instead.
+
+New Features:
+-------------
+Applescript
+- Adds new applescript support for hotkey windows.
+
+Arrangements
+- Add the ability to save a single tab as an arrangement.
+- Add the ability to restore an arrangement as one or more tabs.
+- Hotkey windows are now saved in saved arrangements.
+
+Find on Page
+- Add smart case sensitivity to find on page as the default option.
+
+General
+- Allow windows to snap to the full size of the display.
+- Add a menu item to the Toolbelt menu to save the current toolbelt's
+  width as the default.
+- Extend tip of the day to allow selection between daily or weekly tips.
+- Make the "screen with cursor" window setting update the window's
+  screen each time a hotkey window is opened.
+- Non-edge-spanning X-of-screen windows are now centered.
+- Add setting to disable mouse wheel in mouse reporting mode.
+- Add keybindings for swap pane with left/right/above/below.
+- Add keybindings for find next/previous.
+- Improve performance of deleting profiles when you have lots of them.
+- Add support for finder services. You can right click in Finder to
+  launch iTerm2 in that location.
+- Offer to abort a download when you press ^C while it's downloading.
+- Flash the tab bar on entering fullscreen.
+- Show an announcement when a session restored from an arrangement
+  can't find the profile associated with it.
+- Improve performance of creating a tab if you've increased the
+  maximum number of file descriptors.
+- Redraw windows during resize.
+- Add an optional "proxy" icon to the titlebar. Configurable in
+  Prefs > Appearance.
+- Merge captured output when successive captures are closely related.
+- Add an advanced setting to disable send text at start when launching
+  iTerm2 with a script
+- Add an off-by-default websocket server that enables advanced
+  scripting features.
+
+Shell Integration
+- Offer to turn off focus reporting when host changes.
+- Offer to turn off paste bracketing on host change.
+- Keep track of how many lines are in the prompt so the whole thing
+  can be preserved when you clear the buffer.
+
+Terminal Emulation
+- Add support for Unicode 9 (off by default)
+- Set COLORTERM=truecolor to advertise 24-bit capability.
+- Make the unicode normalization form configurable to None, NFC, NFD,
+  or HFS+. Change the defualt to None.
+
+tmux Integration
+- Tmux integration now supports the "initial directory" setting of the
+  tmux profile.
+- Clear tmux history when you do Clear Buffer or Clear Scrollback
+  Buffer.
+
+Semantic History
+- Allow hyphens in schemes when looking for clickable URLs so semantic
+  history will accept chrome-devtools: schemes.
+
+Tab Bar
+- Improve accessibility of the tab bar--tabs are now selectable with
+  accessibility.
+- Make the tab bar's minimum drag distance configurable.
+
+Terminal emulation changes:
+- Add a new proprietary escape sequence to copy embedded base64 data
+  to pasteboard.
+- Add a new proprietary escape sequence to report the value of system-
+  and user-defined variables (as used in badges).
+- Add a new proprietary escape sequence to show fireworks at the
+  cursor.
+- Add a new proprietary escape sequence to prompt the user to select
+  one or more files and then upload them as a base64-encoded tar.gz
+  file.
+- Add a new proprietary escape sequence to customize touch bar
+  function key labels.
+- Add a new proprietary escape sequence to set individual colors or
+  load a preset.
+- Add a new proprietary escape sequence to set unicode version.
+- Accept OSC 7 as a synonym for 1337;RemoteHost and 1337;CurrentDir.
+- Add support for CSI 12 h and CSI 12 l to set local echo on or off.
+- Move cursor to the origin on DECSET 1049.
+
+Triggers
+- Add a trigger to set the session title.
+- Add a Prompt Detected trigger action to improve shell integration
+  emulation with triggers.
+
+Visuals
+- Underlines can now have a custom color.
+- Add advanced prefs to change the margins.
+- Descenders interrupt underlines.
+- Improve the appearance of dimmed sessions
+- Improve tab bar colors to look more native.
+- Add a preference to disable the line between the title bar and the tab bar.
+- Respect the current keyboard layout when showing a shortcut (e.g.,
+  the keypress for a hotkey window).
+- Windows with light backgrounds now get dark borders, if window borders are enabled.
+
+Bug fixes:
+----------
+- Fix a bug where surrogate pairs would get corrupted when pasting.
+- Use SRGB colors internally. Fixes a bug where hex values in the
+  color picker weren't stable.
+- Rate limit window size change notifications.
+- Improve performance when there is a network mount.
+- Disconnect dead ssh sessions during tmux integration.
+- Improve how focus follows mouse behaves when you split a pane.
+
+SHA-256 of the zip file is
+bacb379041382d181ca7998b04b68db2f3a40107699b860c9c43e3595ac9542e
+</pre></p>
+</p>
+</div>
+
+<h3>Nightly Builds</h3>
+<hr style="margin-top: 0pt; margin-bottom: 4pt" />
+A nightly build is made at midnight Pacific time on days where a change was committed. The change log may be seen <a href="https://github.com/gnachman/iTerm2/commits/master">on Github</a>. Nightly builds sometimes have serious bugs.
+</p>
+<h4 style="margin-top: 4pt">
+<a href="/nightly/latest">
+<img src="/images/Download.png" width=100 height=35 style="padding-right: 10pt">Latest nightly build
+</a></h4>
+<p>
+Older nightly builds may be found in the <a href="/downloads/nightly">nightly build archives.</a>
+</p>
+
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

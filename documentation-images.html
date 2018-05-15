@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Images - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Images</h1>
+<p>iTerm2 is able to display images within the terminal. Using a similar mechanism, it can also facilitate file transfers over any transport (such as ssh or telnet), even in a non-8-bit-clean environment.</p>
+
+<div style="border: 1px solid black; margin: 8px; padding: 4px">
+Just want to try it out and don't care about the protocol? Use the imgcat tool. <a href="/utilities/imgcat">Download imgcat here</a>
+</div>
+
+
+<h3>Example: imgcat</h3>
+
+<p>Using the <a href="/utilities/imgcat">imgcat</a> script, one or more images may be displayed in a terminal session. For example:</p>
+
+<p><img src="images/inline_image_sparky_demo.png"></p>
+
+<p>Critically, animated GIFs are supported as of version 2.9.20150512.</p>
+
+<h3>Protocol</h3>
+
+<p>iTerm2 extends the xterm protocol with a set of proprietary escape sequences. In general, the pattern is:</p>
+
+<pre>ESC ] 1337 ; key = value ^G</pre>
+
+
+<p>Whitespace is shown here for ease of reading: in practice, no spaces should be used.</p>
+
+<p>For file transfer and inline images, the code is:</p>
+
+<pre>ESC ] 1337 ; File = [optional arguments] : base-64 encoded file contents ^G</pre>
+
+
+<p>The optional arguments are formatted as <code>key=value</code> with a semicolon between each key-value pair. They are described below:</p>
+
+<table>
+<tr>
+  <th>Key</th><td></td><th>Description of value</th>
+</tr><tr>
+  <td>name</td><td>&nbsp;&nbsp;</td><td>base-64 encoded filename. Defaults to "Unnamed file".</td>
+</tr><tr>
+<td>size</td><td>&nbsp;&nbsp;</td><td>File size in bytes. Optional; this is only used by the progress indicator.</td>
+</tr><tr>
+<td>width</td><td>&nbsp;&nbsp;</td><td>Width to render. See notes below.</td>
+</tr><tr>
+<td>height</td><td>&nbsp;&nbsp;</td><td>Height to render. See notes below.</td>
+</tr><tr>
+<td>preserveAspectRatio</td><td>&nbsp;&nbsp;</td><td>If set to 0, then the image's inherent aspect ratio will not be respected; otherwise, it will fill the specified width and height as much as possible without stretching. Defaults to 1.</td>
+</tr><tr>
+<td>inline</td><td>&nbsp;&nbsp;</td><td>If set to 1, the file will be displayed inline. Otherwise, it will be downloaded with no visual representation in the terminal session. Defaults to 0.</td>
+</tr>
+</table>
+
+
+<p>The width and height are given as a number followed by a unit, or the word "auto".</p>
+
+<ul>
+<li><em>N</em>: <em>N</em> character cells.</li></li>
+<li><em>N</em>px: <em>N</em> pixels.</li></li>
+<li><em>N</em>%: <em>N</em> percent of the session's width or height.</li></li>
+<li>auto: The image's inherent size will be used to determine an appropriate dimension.</li></li>
+</ul>
+
+
+<h3>More on File Transfers</h3>
+
+<p>By omitting the <code>inline</code> argument (or setting its value to 0), files will be downloaded and saved in the <em>Downloads</em> folder instead of being displayed inline. Any kind of file may be downloaded, but only images will display inline. Any image format that macOS supports will display inline, including PDF, PICT, EPS, or any number of bitmap data formats (PNG, GIF, etc.). A new menu item titled <em>Downloads</em> will be added to the menu bar after a download begins, where progress can be monitored and the file can be located, opened, or removed.</p>
+
+<h3>Sample Code</h3>
+
+<p>Sample code for displaying images may be found here.</p>
+
+<h4><a href="/utilities/imgls">imgls</a></h4>
+
+<p>Provides an augmented directory listing that includes a thumbnail of each image in a directory.</p>
+
+<h4><a href="/utilities/imgcat">imgcat</a></h4>
+
+<p>Displays one or more images inline at their full size.</p>
+
+<h4><a href="/utilities/it2dl">it2dl</a></h4>
+
+<p>Downloads a file, but does not display it inline.</p>
+
+<h4><a href="https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/divider">divider</a></h4>
+
+<p>Draws a full-width, one line-tall graphical divider.</p>
+
+<p><img src="/images/inline_images_divider.png"></p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

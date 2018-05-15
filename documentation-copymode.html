@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Copy Mode - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Copy Mode</h1>
+<p>Copy Mode allows you to make selections using the keyboard. To enter or exit Copy Mode, select <em>Edit &gt; Copy Mode</em>. A special cursor rendered as a downward-pointing arrow is visible while in Copy Mode.</p>
+
+<p>While in Copy Mode, the session's contents will not change. You can use the keyboard to move the cursor and modify the selection using these keystrokes:</p>
+
+<h3>Changing Modes</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>C-space</td>
+    <td>Stop selecting</td>
+  </tr>
+
+  <tr>
+    <td>Esc, q, C-c, C-g</td>
+    <td>Exit copy mode</td>
+  </tr>
+
+  <tr>
+    <td>C-v</td>
+    <td>Toggle rectangular selection</td>
+  </tr>
+
+  <tr>
+    <td>Space, v</td>
+    <td>Toggle selection by character</td>
+  </tr>
+
+  <tr>
+    <td>V</td>
+    <td>Toggle selection by line</td>
+  </tr>
+</table>
+
+
+<h3>Basic Movement</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>h, Left arrow</td>
+    <td>Move left</td>
+  </tr>
+
+  <tr>
+    <td>j, Down arrow</td>
+    <td>Move down</td>
+  </tr>
+
+  <tr>
+    <td>k, Up arrow</td>
+    <td>Move up</td>
+  </tr>
+
+  <tr>
+    <td>l, Right arrow</td>
+    <td>Move right</td>
+  </tr>
+</table>
+
+
+<h3>Content-Based Movement</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+
+  <tr>
+    <td>Meta-Left arrow, M-b, Shift-tab, b</td>
+    <td>Move back one word</td>
+  </tr>
+
+  <tr>
+    <td>M-Right arrow, M-f, Tab, w</td>
+    <td>Move forward one word</td>
+  </tr>
+
+  <tr>
+    <td>[</td>
+    <td>Move to previous mark</td>
+  </tr>
+
+  <tr>
+    <td>]</td>
+    <td>Move to next mark</td>
+  </tr>
+</table>
+
+
+<h3>Screen Movement</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>C-b, Page Up</td>
+    <td>Move up one screen</td>
+  </tr>
+
+  <tr>
+    <td>C-f, Page Down</td>
+    <td>Move down one screen</td>
+  </tr>
+
+  <tr>
+    <td>H</td>
+    <td>Move to top of visible area</td>
+  </tr>
+
+  <tr>
+    <td>M</td>
+    <td>Move to middle of visible area</td>
+  </tr>
+
+  <tr>
+    <td>L</td>
+    <td>Move to bottom of visible area</td>
+  </tr>
+</table>
+
+
+<h3>Line Movement</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>^, M-m</td>
+    <td>Move to start of indentation</td>
+  </tr>
+
+  <tr>
+    <td>0</td>
+    <td>Move to start of line</td>
+  </tr>
+
+  <tr>
+    <td>$</td>
+    <td>Move to end of line</td>
+  </tr>
+
+  <tr>
+    <td>Return</td>
+    <td>Move to start of next line</td>
+  </tr>
+</table>
+
+
+<h3>Document Movement</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>g</td>
+    <td>Move to start</td>
+  </tr>
+
+  <tr>
+    <td>G</td>
+    <td>Move to end</td>
+  </tr>
+</table>
+
+
+<h3>Other Commands</h3>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style="width: 100pt">Keystroke</th>
+    <th>Action</th>
+  </tr>
+
+  <tr>
+    <td>o</td>
+    <td>Swap cursor and other selection endpoint</td>
+  </tr>
+
+  <tr>
+    <td>C-k, y</td>
+    <td>Copy selection</td>
+  </tr>
+</table>
+
+
+
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

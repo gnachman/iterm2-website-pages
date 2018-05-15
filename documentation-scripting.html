@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Scripting - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Scripting</h1>
+<p>iTerm2 features Applescript support which allows you to automate many aspects of its behavior. Quite a bit of customization is also possible by writing shell scripts.</p>
+
+<h3>Applescript</h3>
+
+<p>iTerm2 has sophisticated Applescript support allowing one to write stand-alone scripts to launch the application and open multiple sessions with profiles into either new tabs or new windows. You can also set some other parameters for a session such as foreground and background colors, and transparency.</p>
+
+<p>These scripts can then be saved as stand-alone executable applications.</p>
+
+<h4>Autolaunching Scripts</h4>
+
+<p>iTerm2 also supports autolaunching of an Applescript on startup. On startup, iTerm2 looks for an Applescript file in "~/Library/Application Support/iTerm2/Scripts/AutoLaunch.scpt". If it is found, the "AutoLaunch.scpt" script is launched and executed.</p>
+
+<p>If that folder does not exist, the legacy path of "~/Library/Application Support/iTerm/Scripts/AutoLaunch.scpt" will be used.</p>
+
+<h4>User-Defined Scripts</h4>
+
+<p>iTerm2 also supports launching of user defined scripts from the "Scripts" menu. The scripts need to be stored under the ~/Library/Application Support/iTerm/Scripts directory. You can create this directory if it does not already exist. iTerm2 checks this directory on startup. Scripts must be named with the extension .scpt or .app.</p>
+
+<h1>Reference</h1>
+
+<h2>Objects</h2>
+
+<p>The basic objects are: window, tab, and session. The application has zero or more windows, each window has one or more tabs, and each tab has one or more sessions. Multiple sessions in a tab happen when there are split panes.</p>
+
+<hr/>
+
+
+<h3>Application</h3>
+
+<p>The application exposes various properties and provides functions that are described in this section. For example:</p>
+
+<pre><code>tell application "iTerm2"
+  create window with default profile
+end tell
+</code></pre>
+
+<p class="script-entry">create hotkey window with profile "<i>name</i>"<br/>
+Creates a hotkey window with the specified profile. The profile must be configured to have a hotkey.
+
+Example:
+
+    create hotkey window with profile "Hotkey Window"
+
+<p class="script-entry">create window with default profile<br/>
+create window with default profile command "<i>command</i>"</p>
+
+These commands create a window with the default profile. If you specify a command, it overrides the profile's command (which by default is to invoke `login`).
+
+Examples:
+
+    set newWindow to (create window with default profile)
+    set newWindow to (create window with default profile command "ls -l -R /")
+
+<p class="script-entry">create window with profile "<i>name</i>"<br/>
+create window with profile "<i>name</i>" command "<i>command</i>"</p>
+
+These commands create a window with a named profile. If you specify a command, it overrides the profile's command (which by default is to invoke `login`).
+
+Returns a reference to the new window.
+
+Examples:
+
+    set newWindow to (create window with profile "Name Of Some Profile")
+    set newWindow to (create window with profile "Name Of Some Profile" command "ls -l -R /")
+
+
+<p class="script-entry">current window</p>
+
+A reference to the window that most recently had keyboard focus.
+
+    tell current window
+    ...
+    end tell
+
+<p class="script-entry">windows</p></p>
+
+
+<p>A <code>windows</code> property exposes an array of terminal windows. Other windows, like the preferences panel, are not included.
+The following are standard Applescript idioms for accessing elements of an array of objects:</p>
+
+<pre><code>tell first window
+...
+end tell
+
+repeat with aWindow in windows
+...
+end repeat
+</code></pre>
+
+<hr/>
+
+
+<h3>Windows</h3>
+
+<p>These functions and properties are provided by windows. For example:</p>
+
+<pre><code>tell application "iTerm2"
+  tell current window
+    create tab with default profile
+  end tell
+end tell
+</code></pre>
+
+<p>There are many standard Applescript functions (e.g., to get the window's size and position) that are not documented here.</p>
+
+<p class="script-entry">create tab with default profile<br/>
+create tab with default profile command "<i>command</i>"
+create tab with profile "<i>name</i>"</br>
+create tab with profile "<i>name</i>" command "<i>command</i>"
+</p>
+
+
+<p>Creates a tab with the default profile or a profile by name. If the command is specified, it is run instead of the profile's command/login shell.</p>
+
+<p>Returns a reference to the new tab.</p>
+
+<p class="script-entry">current session</p>
+
+
+<p>The <code>current session</code> is the session that would receive keyboard input if the window had keyboard focus.</p>
+
+<p class="script-entry">current tab</p>
+
+
+<p>The <code>current tab</code> is the tab that is selected in the window.</p>
+
+<p class="script-entry">hide hotkey window</p>
+
+
+<p>If this is a hotkey window, it hides it with the standard hotkey window animation and makes the previously active application active, if appropriate.</p>
+
+<p class="script-entry">hotkey window profile</p>
+
+
+<p>Returns the name of the hotkey window profile associated with this window, if any.</p>
+
+<p class="script-entry">id</p>
+
+
+<p>The window ID. Useful for commands like <code>screencapture</code>.</p>
+
+<p class="script-entry">is hotkey window</p>
+
+
+<p>Returns a boolean value which is true if the window is a hotkey window associated with a profile.</p>
+
+<p class="script-entry">name</p>
+
+
+<p>The window's name, as appears in the title bar.</p>
+
+<p class="script-entry">reveal hotkey window</p>
+
+
+<p>If this is a hotkey window, it reveals it with the standard hotkey window animation and makes it key and the application active.</p>
+
+<p class="script-entry">select</p>
+
+
+<p>Gives the window keyboard focus and brings it to the front.</p>
+
+<p class="script-entry">tabs</p>
+
+
+<p>An array of tabs. See the methods on Tab, below.</p>
+
+<p class="script-entry">toggle hotkey window</p>
+
+
+<p>Either shows or hides the hotkey window, if this is a hotkey window, using the standard animation. May make the app active or inactive.</p>
+
+<hr/>
+
+
+<h3>Sessions</h3>
+
+<p>These functions and properties are provided by sessions. For example:</p>
+
+<pre><code>tell application "iTerm2"
+  tell current session of current window
+    split horizontally with default profile
+  end tell
+end tell
+</code></pre>
+
+<p class="script-entry">background image</p>
+
+
+<p>This is a string property that gives a path to the background image of the session.</p>
+
+<p class="script-entry">close</p>
+
+
+<p>Terminates the session and closes its pane.</p>
+
+<p class="script-entry">Color properties</p>
+
+
+<p>Various properties which are readable and settable affect the session's colors:</p>
+
+<ul>
+<li>background color</li>
+<li>bold color</li>
+<li>cursor color</li>
+<li>cursor text color</li>
+<li>foreground color</li>
+<li>selected text color</li>
+<li>selection color</li>
+<li>ANSI black color</li>
+<li>ANSI red color</li>
+<li>ANSI green color</li>
+<li>ANSI yellow color</li>
+<li>ANSI blue color</li>
+<li>ANSI magenta color</li>
+<li>ANSI cyan color</li>
+<li>ANSI white color</li>
+<li>ANSI bright black color</li>
+<li>ANSI bright red color</li>
+<li>ANSI bright green color</li>
+<li>ANSI bright yellow color</li>
+<li>ANSI bright blue color</li>
+<li>ANSI bright magenta color</li>
+<li>ANSI bright cyan color</li>
+<li>ANSI bright white color</li>
+</ul>
+
+
+<p>An example:</p>
+
+<pre><code>set foreground color to {65535, 0, 0, 0}
+</code></pre>
+
+<p>Because Applescript is kind of a dumpster fire, the standard syntax for a color is <code>{red, green, blue, alpha}</code> where each value is a number between 0 and 65535.</p>
+
+<p class="script-entry">answerback string</p>
+
+
+<p>The string sent when the <code>ENQ</code> escape sequence is received.</p>
+
+<p class="script-entry">columns</p>
+
+
+<p>The width of the session in character cells.</p>
+
+<p class="script-entry">contents</p>
+
+
+<p>Returns the visible contents of the session as a string. Each row is terminated with a newline.</p>
+
+<p class="script-entry">id</p>
+
+
+<p>Returns the session's unique identifier.</p>
+
+<p class="script-entry">is at shell prompt</p>
+
+
+<p>Indicates if the session is at a shell prompt accepting a command. Only works if <a href="/shell_integration.html">Shell Integration</a> is installed; if not it will return false.</p>
+
+<p class="script-entry">is processing</p>
+
+
+<p>Returns a boolean indicating if the session received output recently.</p>
+
+<p class="script-entry">name</p>
+
+
+<p>A string property with the session's name as seen in its title bar.</p>
+
+<p class="script-entry">profile name</p>
+
+
+<p>The name of the profile the session was created with. A string. Read-only.</p>
+
+<p class="script-entry">rows</p>
+
+
+<p>The height of the session in character cells.</p>
+
+<p class="script-entry">set columns to <i>number</i><br/>
+set rows to <i>number</i></p>
+
+
+<p>Changes the size of the session.</p>
+
+<p class="script-entry">split horizontally with default profile<br/>
+split vertically with default profile<br/>
+split horizontally with default profile command "<i>command</i>"<br/>
+split vertically with default profile command "<i>command</i>"</p>
+
+
+<p>Splits the session either horizontally or vertically. If the optional <em>command</em> is provided then it is run in place of the profile's command. A horizontal split has a horizontal divider, while a vertical split has a vertical divider.</p>
+
+<p>Returns a reference to a session.</p>
+
+<p class="script-entry">split horizontally with profile "<i>name</i>"<br/>
+split vertically with profile "<i>name</i>"<br/>
+split horizontally with profile "<i>name</i>" command "<i>command</i>"<br/>
+split vertically with profile "<i>name</i>" command "<i>command</i>"</p>
+
+
+<p>Like the "default profile" commands, but uses a named profile instead of the default profile.</p>
+
+<p class="script-entry">split horizontally with same profile<br/>
+split vertically with same profile<br/>
+split horizontally with same profile command "<i>command</i>"<br/>
+split vertically with same profile command "<i>command</i>"</p>
+
+
+<p>Like the "default profile" commands, but uses the current session's profile.</p>
+
+<p class="script-entry">select</p>
+
+
+<p>Makes the session active in its tab. Does not affect which tab is selected or which window has keyboard focus.</p>
+
+<p class="script-entry">text</p>
+
+
+<p>A synonym for <code>contents</code>.</p>
+
+<p class="script-entry">transparency</p>
+
+
+<p>A floating-point value from 0 to 1 giving how transparent the session is.</p>
+
+<p class="script-entry">tty</p>
+
+
+<p>The name of the session's tty (e.g., /dev/ttys01). Returns a string.</p>
+
+<p class="script-entry">unique id</p>
+
+
+<p>A string uniquely identifying the session.</p>
+
+<p class="script-entry">variable "<i>name</i>"<br/>
+set variable named "<i>name</i>" to "<i>value</i>"</p>
+
+
+<p>Gets and sets the value of a variable by name. Variables are described in <a href="/badges.html">Badges</a>. You may only set user-defined variables, whose names always begin with "user.".</p>
+
+<p class="script-entry">write text "<i>text</i>"<br/>
+write text "<i>text</i>" newline NO</p>
+
+
+<p>Writes text to the session, as though you had typed it. Optionally without a newline.</p>
+
+<p class="script-entry">write contents of file "<i>filename</i>"</p>
+
+
+<p>Writes the contents of a file to the session as though you had typed it.</p>
+
+<hr/>
+
+
+<h3>Tabs</h3>
+
+<p>These functions and properties are provided by tabs. For example:</p>
+
+<pre><code>tell application "iTerm2"
+  tell current tab of current window
+    select
+  end tell
+end tell
+</code></pre>
+
+<p class="script-entry">close</p>
+
+
+<p>Closes the tab.</p>
+
+<p class="script-entry">current session</p>
+
+
+<p>The session in this tab that most recently had keyboard focus.</p>
+
+<p class="script-entry">index</p>
+
+
+<p>The index of the tab in the window, starting from 0.</p>
+
+<p class="script-entry">select</p>
+
+
+<p>Selects the tab, making it the current tab for the window.</p>
+
+<p class="script-entry">sessions</p>
+
+
+<p>An array of sessions.</p>
+
+<p class="script-entry">sessions</p>
+
+
+<p>An array of sessions in this tab.</p>
+
+<p>The index from 0 of the tab in its window.</p>
+
+<h2>Supporting both old and new versions of iTerm2</h2>
+
+<p>If your application needs to support both the old and new Applescript syntax, this is the recommended technique:</p>
+
+<pre>
+on theSplit(theString, theDelimiter)
+    set oldDelimiters to AppleScript's text item delimiters
+    set AppleScript's text item delimiters to theDelimiter
+    set theArray to every text item of theString
+    set AppleScript's text item delimiters to oldDelimiters
+    return theArray
+end theSplit
+
+on IsModernVersion(version)
+    set myArray to my theSplit(version, ".")
+    set major to item 1 of myArray
+    set minor to item 2 of myArray
+    set veryMinor to item 3 of myArray
+    
+    if major < 2 then
+        return false
+    end if
+    if major > 2 then
+        return true
+    end if
+    if minor < 9 then
+        return false
+    end if
+    if minor > 9 then
+        return true
+    end if
+    if veryMinor < 20140903 then
+        return false
+    end if
+    return true
+end IsModernVersion
+
+on NewScript()
+    -- Return the modern script as a string here; what follows is an example.
+    return "create window with default profile"
+end NewScript
+
+on OldScript()
+    -- Return the legacy script as a string here; what follows is an example.
+    return "
+    set myTerm to (make new terminal)
+    tell myTerm
+        launch session \"Default\"
+    end tell"
+end OldScript
+
+tell application "iTerm"
+    if my IsModernVersion(version) then
+        set myScript to my NewScript()
+    else
+        set myScript to my OldScript()
+    end if
+end tell
+
+set fullScript to "tell application \"iTerm\"
+" & myScript & "
+end tell"
+
+run script fullScript
+</pre>
+
+
+
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

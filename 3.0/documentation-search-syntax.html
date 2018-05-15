@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Search Syntax - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Search Syntax</h1>
+<p>When iTerm2 presents a list of profiles, it usually includes a search box. The search box uses a special syntax that letes you tailor your searches to quickly find what you're looking for.</p>
+
+<h3>Searching Profiles</h3>
+
+<p>Each word in the search query must match at least one word in either the title or the tags of of a profile in order for that profile to be matched by the query. For a word to be a match, it must be a substring.</p>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style>Query</th>
+    <td>&nbsp;&nbsp&nbsp;&nbsp;</td>
+    <th>Profile Name</th>
+    <td>&nbsp;&nbsp;</td>
+    <th>Matches?</th>
+  </tr>
+
+  <tr>
+    <td>Linux</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><b>Linux</b></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <td>x</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Linu<b>x</b></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <td>z</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Linux</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>No</td>
+  </tr>
+
+  <tr>
+    <td>George L</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td><b>George</b>'s <b>L</b>inux Machine</td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Yes</td>
+  </tr>
+</table>
+
+
+<h3>Operators</h3>
+
+<p>You may prefix a phrase in the search query with an <em>operator</em> to narrow your query. Only two operators are defined:</p>
+
+<ul>
+<li>The <em>name:</em> operator only tries to match words in the profile's name.</li>
+<li>The <em>tag:</em> operator only tries to match words in the profile's tags.</li>
+</ul>
+
+
+<h3>Quoting</h3>
+
+<p>You can require that two or more words occur in order by putting quotes in your query. For example:</p>
+
+<table style="background: white; column-gap: 40px">
+  <tr class="tableheader">
+    <th style>Query</th>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <th>Profile Name</th>
+    <th>Matches?</th>
+  </tr>
+
+  <tr>
+    <td>"Linux machine"</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>George's <b>Linux machine</b></td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <td>"machine Linux"</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Linux machine</td>
+    <td>No</td>
+  </tr>
+
+</table>
+
+
+<h3>Anchoring</h3>
+
+<p>Normally, words in a query must match a substring of a word in the title or tags of a profile. You can require that a word in your query matches a prefix of a word in the title or tags by inserting a caret (<sup>)</sup> before the word. You can require that a word in your query matches the suffix of a word in the title or tags by appending a dollar sign ($) after the word. For example, the query <em><sup>a*</sup> matches only profiles with words starting with "a". The query </em>a$<em> matches words ending in "a". The query </em><sup>a$*</sup> matches only the word "a".</p>
+
+<table style="background: white">
+  <tr class="tableheader">
+    <th style>Query</th>
+    <td>&nbsp;&nbsp&nbsp;&nbsp;</td>
+    <th>Profile Name</th>
+    <th>Matches?</th>
+  </tr>
+
+  <tr>
+    <td>^root</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>root@example.com</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <td>^root</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Groot!</td>
+    <td>No</td>
+  </tr>
+
+  <tr>
+    <td>root$</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Groot</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <td>^root$</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Groot</td>
+    <td>No</td>
+  </tr>
+
+  <tr>
+    <td>^root$</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>root</td>
+    <td>Yes</td>
+  </tr>
+
+</table>
+
+
+<h3>Combining Features</h3>
+
+<p>You may combine quoting, operators, and anchors. The operator always comes first, followed by a caret, followed by a quoted string, followed by a dollar sign. Consider the following examples:</p>
+
+<pre>name:^"George's Linux Machine"$</pre>
+
+
+<p>Three consecutive whole words in the profile's name must equal "George's Linux Machine".</p>
+
+<pre>name:"George's Linux Machine"$</pre>
+
+
+<p>Would match a profile named "XGeorge's Linux Machine", unlike the previous example.</p>
+
+<pre>name:^"George's Linux Machine"</pre>
+
+
+<p>Would match a profile named "George's Linux MachineX", unlike the first example.</p>
+
+<pre>name:"George's Linux Machine"</pre>
+
+
+<p>Would match a profile named "XGeorge's Linux MachineX", unlike the first example.</p>
+
+<pre>name:^George's
+name:George's$
+name:^George's$
+</pre>
+
+
+<p>A word having the prefix, suffix, or exactly matching "George's" must occur in the profile's name to match these queries, respectively.</p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

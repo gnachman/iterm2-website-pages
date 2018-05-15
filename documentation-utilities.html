@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Utilities - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Utilities</h1>
+<p>iTerm2 has a collection of shell scripts that help you take advantage of some of its unique features. When you install <a href="documentation-shell-integration.html">Shell Integration</a> from the <strong>iTerm2 > Install Shell Integration</strong> menu, you're asked if you'd like to install the Utilities Package as well. This page describes these utilities.</p>
+
+<p>If you prefer to install only the utilities (without also installing Shell Integration) you can find them <a href="https://github.com/gnachman/iterm2-website/tree/master/source/utilities">here</a>. Most of the utilities work without Shell Integration.</p>
+
+<h3>Components</h3>
+
+<p>The Utilities Package contains the following programs:</p>
+
+<h4>imgcat</h4>
+
+<p>The <code>imgcat</code> program displays images inline in your terminal.</p>
+
+<p><img src="images/inline_image_sparky_demo.png"></p>
+
+<p>It supports all standard image formats, including animated GIFs.</p>
+
+<pre>
+Usage:
+imgcat filename [filename...]
+
+or
+
+cat image | imgcat
+</pre>
+
+
+<h4>imgls</h4>
+
+<p>Lists the files in a directory with thumbnail previews for images.</p>
+
+<pre>
+Usage:
+imgls [filename...]
+</pre>
+
+
+<h4>it2attention</h4>
+
+<p>Requests attention. Can bounce the dock icon or show a fireworks animation at the cursor position.</p>
+
+<pre>
+Usage:
+it2attention start
+  Begin bouncing the dock icon if another app is active
+it2attention stop
+  Stop bouncing the dock icon if another app is active
+it2attention fireworks
+  Show an explosion animation at the cursor
+</pre>
+
+
+<h4>it2check</h4>
+
+<p>Checks if the terminal emulator is iTerm2.</p>
+
+<pre>
+Example:
+
+it2check && echo This is iTerm2 || echo This is not iTerm2
+</pre>
+
+
+<h4>it2copy</h4>
+
+<p>Copies text to the pasteboard. Works over ssh. Accepts either standard input or a named file.</p>
+
+<pre>
+Examples:
+
+cat file.txt | it2copy
+it2copy file.txt
+</pre>
+
+
+<p>For this to work you must enable <strong>Prefs > General > Applications in terminal may access clipboard</strong>.</p>
+
+<h4>it2dl</h4>
+
+<p>The <code>it2dl</code> program downloads files. This is useful when you are ssh'ed to a remote host. The downloaded files are placed in your <em>Downloads</em> folder.</p>
+
+<h4>it2getvar</h4>
+
+<p>Fetches a session variable. For a list of session variables, see the <a href="documentation-badges.html">Badges</a> page.</p>
+
+<pre>
+Example:
+
+it2getvar session.name
+</pre>
+
+
+<h4>it2setcolor</h4>
+
+<p>Configures iTerm2's colors.</p>
+
+<pre>
+Usage
+
+1) To set a specific color to an RGB value:
+  it2setcolor name color [name color...]
+For example:
+  it2setcolor fg fff
+
+name is one of:
+  fg bg bold link selbg selfg curbg curfg underline tab
+  black red green yellow blue magenta cyan white
+  br_black br_red br_green br_yellow br_blue br_magenta br_cyan br_white
+
+color is of the format:
+  RGB        (three hex digits, like fff)
+  RRGGBB     (six hex digits, like f0f0f0)
+  cs:RGB     (cs is a color space name)
+  cs:RRGGBB  (cs is a color space name)
+
+  The color space names accepted in the color are:
+    srgb       (sRGB, the default if none is specified)
+    rgb        (Apple's old device-independent colorspace)
+    p3         (Apple's fancy large-gamut colorspace)
+
+2) To switch to a named color preset:
+  it2setcolor preset name
+For example:
+  it2setcolor preset 'Light Background'
+
+3) To reset the current tab's color to the system default:
+  it2setcolor tab default
+</pre>
+
+
+<h4>it2setkeylabel</h4>
+
+<p>Configures touch bar function key labels.</p>
+
+<pre>
+Usage:
+   it2setkeylabel set Fn Label
+     Where n is a value from 1 to 20
+   it2setkeylabel set status Label
+     Sets the Touch Bar "status" button's label
+   it2setkeylabel push [name]
+     Saves the current labels with an optional name. Resets labels to their default value, unless name begins with a . character.
+   it2setkeylabel pop [name]
+     If name is given, all key labels up to and including the one with the matching name are popped.
+</pre>
+
+
+<p>Recommended usage for customizing an application is to set key labels and then push with a <em>name</em> of a concatenation of the app's name (e.g., "emacs") and a random number. When the app exists, pop to that same name.</p>
+
+<h4>it2ul</h4>
+
+<p>Uploads a file. Works over ssh.</p>
+
+<pre>
+Usage: it2ul [destination [tar flags]]
+  If given, the destination specifies the directory to place downloaded files.
+  Further options are passed through to tar. See your system's manpage for tar for details.
+</pre>
+
+
+<p>If used without arguments, the file goes to the current directory. When you run this, you'll be prompted to select one or more files. Next, iTerm2 creates a tar.gz file containing those files and base-64 encodes them. The it2ul script receives it, decodes it, and untars it with -xzfC. Any arguments you provide go after a lone - argument,</p>
+
+<h4>it2universion</h4>
+
+<p>Sets the unicode version for the current session. The key difference is that unicode 8 and unicode 9 use different width tables for emoji. Most apps aren't updated to use the unicode 9 tables, but Unicode 9 produces nicer results with fewer overlapping characters.</p>
+
+<pre>
+Usage:
+  it2universion set 8
+  it2universion set 9
+  it2universion push [name]
+     Saves the current version with an optional name.
+  it2universion pop [name]
+     If name is given, all versions up to and including the one with the matching name are popped.
+</pre>
+
+
+
+
+<pre>
+Usage:
+it2dl filename
+</pre>
+
+
+<h3>Location</h3>
+
+<p>The Utilities Package places shell scripts in <code>$HOME/.iterm2/</code> and creates aliases to them at the bottom of <code>$HOME/.iterm2_shell_integration.$SHELL</code>.</p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>

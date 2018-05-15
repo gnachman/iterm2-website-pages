@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Touch Bar - Documentation - iTerm2 - macOS Terminal Replacement</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="iTerm2 is a replacement for Terminal and the successor to iTerm">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <script>
+    // Begin Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22363859-1', 'auto');
+    ga('send', 'pageview');
+    // End Google Analytics
+  </script>
+
+</head>
+<body>
+  <header>  
+    <div class="row">
+      <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+        <div class="text-center"><a href="/index.html"><img src="/img/logo2x.jpg" width=800 height=312></a></div>
+        <div class="sticky contain-to-grid">
+          <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+              <li class="small-screen-donate">
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li>
+		  <a href="/donate.html"><img src="/images/DonateButton.png" width="92" height="26"></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/news.html">News</a></li>
+            <li ><a href="/features.html">Features</a></li>
+            <li ><a href="/faq.html">FAQ</a></li>
+            <li class="active"><a href="/documentation.html">Documentation</a></li>
+            <li ><a href="/downloads.html">Downloads</a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>
+</header>
+<div class="row">
+  <div class="small-12 medium-12 large-10 large-centered columns wide-row">
+    <div class="main panel">
+      <div class="doc-wrapper">
+<a href="#" data-dropdown="drop-menu">Table of Contents</a>
+<div id="drop-menu" data-dropdown-content class="f-dropdown content">
+        <div class="inner-menu">
+                <ul class="sub-nav">
+<div class="toc_subhead">Introduction</div>
+
+<li><a href="documentation-highlights.html">Highlights for New Users</a></li>
+<li><a href="documentation-general-usage.html">General Usage</a></li>
+
+<div class="toc_subhead">User Interface</div>
+
+<li><a href="documentation-menu-items.html">Menu Items</a></li>
+<li><a href="documentation-preferences.html">Preferences</a></li>
+<li><a href="documentation-touch-bar.html">Touch Bar</a></li>
+<li><a href="documentation-copymode.html">Copy Mode</a></li>
+<li><a href="documentation-fonts.html">Fonts</a></li>
+<li><a href="documentation-search-syntax.html">Profile Search Syntax</a></li>
+
+<div class="toc_subhead">Features</div>
+
+<li><a href="documentation-automatic-profile-switching.html">Automatic Profile Switching</a></li>
+<li><a href="documentation-badges.html">Badges</a></li>
+<li><a href="documentation-buried-sessions.html">Buried Sessions</a></li>
+<li><a href="documentation-captured-output.html">Captured Output</a></li>
+<li><a href="documentation-coprocesses.html">Coprocesses</a></li>
+<li><a href="documentation-hotkey.html">Hotkeys</a></li>
+<li><a href="documentation-restoration.html">Session Restoration</a></li>
+<li><a href="documentation-shell-integration.html">Shell Integration</a></li>
+<li><a href="documentation-smart-selection.html">Smart Selection</a></li>
+<li><a href="documentation-tmux-integration.html">tmux Integration</a></li>
+<li><a href="documentation-triggers.html">Triggers</a></li>
+<li><a href="documentation-utilities.html">Utilities</a></li>
+
+<div class="toc_subhead">Advanced</div>
+
+<li><a href="documentation-scripting.html">Scripting</a></li>
+<li><a href="documentation-dynamic-profiles.html">Dynamic Profiles</a></li>
+<li><a href="documentation-images.html">Inline Images Protocol</a></li>
+<li><a href="documentation-escape-codes.html">Proprietary Escape Codes</a></li>
+
+                </ul>
+        </div>
+</div>
+<section class="doc-section">
+<hr>
+<h1>Touch Bar</h1>
+<p>As with many applications, you may customize the controls on the touch bar with <strong>View > Customize Touch Bar</strong>. The following controls are available:</p>
+
+<h4>Man Page</h4>
+
+<p>Opens the manpage for the command behind the cursor.</p>
+
+<h4>Color Preset</h4>
+
+<p>When selected, this opens a scrollable list of color presets. Choosing one changes the current terminal's colors to use the preset.</p>
+
+<h4>Function Keys</h4>
+
+<p>There are two function keys controls. The first, labeled <em>Function Keys Popover</em>, opens a scrollable list of function keys when pressed. It is compact but requires two taps to press a function key. The second, labeled <em>Function Keys</em>, shows a scrollable list of function keys at all times. It takes more space but is quicker to use.</p>
+
+<p>If you install <a href="https://www.iterm2.com/documentation-shell-integration.html">Shell Integration</a> and <a href="https://www.iterm2.com/documentation-utilities.html">Utilities</a>, then you'll get a command <em>it2setkeylabel</em> that lets you configure what each function key's label says. You can configure each application you use (such as vim or emacs) to set the labels appropriately.</p>
+
+<h4>Add Mark</h4>
+
+<p>The <em>Add Mark</em> touch bar control saves the current location in history. You can navigate among marks with Cmd-Shift-Up and Cmd-Shift-Down. There are also touch bar controls to navigate marks.</p>
+
+<h4>Next/Previous Mark</h4>
+
+<p>Navigates to the next or previous mark. If you have <a href="https://www.iterm2.com/documentation-shell-integration.html">Shell Integration</a> installed, each command prompt inserts a mark, so the previous mark is usually the previous shell prompt.</p>
+
+<h4>Autocomplete Suggestions</h4>
+
+<p>If you have <a href="https://www.iterm2.com/documentation-shell-integration.html">Shell Integration</a> installed, iTerm2 can remember you command history. That history is used to make suggestions for commands, which appear in this touch bar control.</p>
+
+<h4>Status</h4>
+
+<p>The status touch bar control shows a user-configurable message. If you install <a href="https://www.iterm2.com/documentation-shell-integration.html">Shell Integration</a> and <a href="https://www.iterm2.com/documentation-utilities.html">Utilities</a>, then you'll get a command <em>it2setkeylabel</em> that lets you configure what the status control says. For example, it could display the git branch of the current directory. Tapping it scrolls to the location where the status was last changed.</p>
+
+<p>For example, suppose you want to show your current git branch in the touch bar.</p>
+
+<ol>
+<li>Select the menu item <strong>View > Customize Touch Bar</strong></li>
+<li>Drag "Your Message Here" button into the touch bar</li>
+<li>Modify PS1 to include <code>\[$(it2setkeylabel set status "$message")\]</code>. For example:</li>
+</ol>
+
+
+<pre>
+PS1='\s-\v\$\[$(~/.iterm2/it2setkeylabel set status \
+"$(test -d .git && (git rev-parse --abbrev-ref HEAD) || (echo -n "Not a repo"))")\] '
+</pre>
+
+
+<h4>Custom Buttons</h4>
+
+<p>You can define custom touch bar buttons in <strong>Prefs > Keys > Add Touch Bar Item</strong>. You can then add the item to you touch bar from <strong>View > Customize Touch Bar</strong>.</p>
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="small-12 medium-12 large-10 large-centered columns text-center">
+      <p>iTerm2 by George Nachman. Website by Matthew Freeman, George Nachman, and James A. Rosen.</p>
+      <p>Website updated and optimized by <a href="http://hexbrain.com" target="_blank">HexBrain</a></p>
+    </div>
+  </div>
+</footer>
+<script src="/js/scripts.js"></script>                
+<script type="text/javascript">
+  function showId(id) {
+    document.getElementById("changelist" + id).style.display = 'block';
+    document.getElementById("show" + id).style.display = 'none';
+    document.getElementById("hide" + id).style.display = 'inline';
+  }
+
+  function hideId(id) {
+    document.getElementById("changelist" + id).style.display = 'none';
+    document.getElementById("show" + id).style.display = 'inline';
+    document.getElementById("hide" + id).style.display = 'none';
+  }
+  $(document).foundation();
+</script>
+</body>
+</html>
